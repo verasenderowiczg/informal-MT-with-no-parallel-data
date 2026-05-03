@@ -1,0 +1,54 @@
+model:
+  base: "facebook/nllb-200-distilled-600M"
+  freeze_encoder: true
+
+training:
+  optimizer: adamw
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  batch_size: 16
+  epochs: 5
+  warmup_ratio: 0.10
+  max_grad_norm: 1.0
+  seed: 42
+
+  # LoRA fallback (only used if --use_lora flag is passed)
+  lora:
+    rank: 16
+    alpha: 32
+    target_modules: ["q_proj", "v_proj"]
+
+data:
+  en_train: "data/multilexnorm/en_train_augmented.jsonl"
+  es_train: "data/multilexnorm/es_train_augmented.jsonl"
+  en_dev:   "data/multilexnorm/en_test.jsonl"   # used for dev loss monitoring
+  es_dev:   "data/multilexnorm/es_test.jsonl"
+  handwritten_en: "data/handwritten/en_pairs.jsonl"
+  handwritten_es: "data/handwritten/es_pairs.jsonl"
+  max_length: 128
+
+direction:
+  en_path: "models/en_noise_direction.pt"
+
+conditions:
+  # scale: float = fixed scale; "learned" = trainable scalar init at 2.0
+  no_shift:
+    scale: 0.0
+    data: en
+  en_only_fixed_2x:
+    scale: 2.0
+    data: en
+  en_only_learned:
+    scale: learned
+    data: en
+  en_plus_es_fixed_2x:
+    scale: 2.0
+    data: en+es
+  en_plus_es_learned:
+    scale: learned
+    data: en+es
+
+checkpoints:
+  dir: "models/checkpoints"
+  best_dir: "models/best"
+  save_every_epoch: true

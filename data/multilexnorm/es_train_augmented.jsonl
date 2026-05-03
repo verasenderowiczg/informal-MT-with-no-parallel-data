@@ -1,0 +1,568 @@
+{"noisy": "la gente no cambia por que quiere, sino por que le hicieron daño y se vio obligada a dejar de ser quien era ..", "clean": "la gente no cambia por que quiere, sino por que le hicieron daño y se vio obligada a dejar de ser quien era .."}
+{"noisy": "hoy llevo la camiseta de batman jdjejdkahflwkdjwpvqh .", "clean": "hoy llevo la camiseta de batman jdjejdkahflwkdjwpvqh ."}
+{"noisy": "el siestón que me voy a echar hoy va a ser digno...!", "clean": "el siestón que me voy a echar hoy va a ser digno...!"}
+{"noisy": "@xheartbreakeeer_ ay dios, hoy acabo en el hospital por ataqueees.", "clean": "@xheartbreaker_ ay dios, hoy acabo en el hospital por ataques."}
+{"noisy": "esperando walking dead . a ver como acaba...", "clean": "esperando walking dead . a ver como acaba..."}
+{"noisy": "@ursulaa5 me esquivocao y estoy en el donald del piolin ya estoy yendo. http://t.co/q9kq4daxfv", "clean": "@ursulaa5 me he_equivocado y estoy en el donald del piolín ya estoy yendo. http://t.co/q9kq4daxfv"}
+{"noisy": "@cristinasorisa @lorenahl16 @rocioortiz954 @pilar_2212 @silvia_sg_95 de paluegos del fanegol jajajajajajajajajjajajajajajaja me meoooo", "clean": "@cristinasorisa @lorenahl16 @rocioortiz954 @pilar_2212 @silvia_sg_95 de paluegos del fanegol ja me meo"}
+{"noisy": "* vega del codorno * actualizado: 02-04-2013 05:02 utc * temperatura: 2,1 ºc ( máx. : 2,8 / mín. : 2,1 ) * humedad:... http://t.co/yvq0k7mws4", "clean": "* vega del codorno * actualizado: 02-04-2013 05:02 utc * temperatura: 2,1 ºc ( máxima : 2,8 / mínima : 2,1 ) * humedad:... http://t.co/yvq0k7mws4"}
+{"noisy": "@loresinte @rubitamalaguita @bea_diamonds miedo me da chicas!! miedo me da xq el año pasao acabamos to jamas porai jajaja", "clean": "@loresinte @rubitamalaguita @bea_diamonds miedo me da chicas!! miedo me da xq el año pasado acabamos todo jamas por_ahí jajaja"}
+{"noisy": "@danisantostv a mi sobre todo la reacción de miriam #noentiendonada #miriampasucasa #gh14", "clean": "@danisantostv a mi sobre todo la reacción de míriam #noentiendonada #miriampasucasa #gh14"}
+{"noisy": "@amaya_fitness y q es mejor, lentas o rapidas las repeticiones???", "clean": "@amaya_fitness y q es mejor, lentas o rápidas las repeticiones?"}
+{"noisy": "no se que responderte! .. ok? suena borde, vale? tambien suena borde, gracias? no lo merece, que te digo?.. pues mejor me callo y fin.", "clean": "no se que responderte! .. ok? suena borde, vale? también suena borde, gracias? no lo merece, que te digo?.. pues mejor me callo y fin."}
+{"noisy": "#lavidaesmásfácilcuando te has fumado unos porros, no hay problemas ni preocupaciones.", "clean": "#lavidaesmásfácilcuando te has fumado unos porros, no hay problemas ni preocupaciones."}
+{"noisy": "voy aaa seguir el camino con el mooovil apagado que caasi no tengo bateriaa . adioos twitteer y adios justin biebeer's :)", "clean": "voy aaa seguir el camino con el móvil apagado que casi no tengo batería . adiós twitter y adios justin bieber :)"}
+{"noisy": "felicidades a mi omega, el mas fuerte d tds , que tienes un corazón enorme. te echo de menos compi . cuidate mucho. te quiero @nachitopeerez12", "clean": "felicidades a mi omega, el mas fuerte d todos , que tienes un corazón enorme. te echo de menos compañero . cuidate mucho. te quiero @nachitopeerez12"}
+{"noisy": "@marixu93 ooooooooohhhhh yo tambien te quiero, y quiero verte ya!!! guapa!", "clean": "@marixu93 ooooooooohhhhh yo también te quiero, y quiero verte ya!!! guapa!"}
+{"noisy": "@solopuedekedar1 @kicamqm @martafuentesb porque tan abajo ? eso no puede ser", "clean": "@solopuedekedar1 @kicamqm @martafuentesb porque tan abajo ? eso no puede ser"}
+{"noisy": "@jose04011988 @nereidamarquez6a q siii no a cambiado nadaa jajaja", "clean": "@jose04011988 @nereidamarquez6a q sí no a cambiado nada jajaja"}
+{"noisy": "ea tenía q llover... -.-", "clean": "ea tenía q llover... -.-"}
+{"noisy": "qiero ver a @rociomrales17 @anabelgarcia97 @paulanadales96 @laura_pdz97 @mariaaaagc_97 @noeliacastro212 @bonizc @pedriitooohd17 @albamartinez_96", "clean": "quiero ver a @rociomrales17 @anabelgarcia97 @paulanadales96 @laura_pdz97 @mariagc_97 @noeliacastro212 @bonizc @pedriitohd17 @albamartinez_96"}
+{"noisy": "@agusvaras10 aaah buenoo esqe digo pa qe madrugará este jajaja", "clean": "@agusvaras10 aaah bueno es_que digo para qué madrugará este jajaja"}
+{"noisy": "@sergiomaravish jajajaja que lo sepaaas ;)", "clean": "@sergiomaravish jajajaja que lo sepas ;)"}
+{"noisy": "vamos al lío que ya era hora de empezar", "clean": "vamos al lío que ya era hora de empezar!"}
+{"noisy": "ostia k putada yo d romeria to la nocheee ole ole", "clean": "ostia k putada yo d romería toda la noche ole ole"}
+{"noisy": "@mariadelmar816 no creo que a nadie le sorprenda jajajajaj ya ves que ya me humillo yo, no hace falta que lo hagas tu jajajajaj ;)", "clean": "@mariadelmar816 no creo que a nadie le sorprenda ja ya ves que ya me humillo yo, no hace falta que lo hagas tu ja ;)"}
+{"noisy": "#meteoalarm en #granada para el 03-04-2013 01:00:00 sobre viento de nivel #blanco", "clean": "#meteoalarm en #granada para el 03-04-2013 01:00:00 sobre viento de nivel #blanco"}
+{"noisy": "i'm at cercanías el casar - @renfe ( getafe , comunidad de madrid ) http://t.co/jx1ynjmjex", "clean": "i'm at cercanías el casar - @renfe ( getafe , comunidad de madrid ) http://t.co/jx1ynjmjex"}
+{"noisy": "#meteoalarm en #toledo para el 01-04-2013 17:06:00 sobre niebla de nivel #blanco", "clean": "#meteoalarm en #toledo para el 01-04-2013 17:06:00 sobre niebla de nivel #blanco"}
+{"noisy": "ya en el rosal, entreno con el b, a seguir currando !!", "clean": "ya en el rosal, entreno con el b, a seguir currando !!"}
+{"noisy": "siento mariposas en el estómago.. creo que tengo de dejar de comerlas.", "clean": "siento mariposas en el estómago.. creo que tengo de dejar de comerlas."}
+{"noisy": "y decir como todos los dias a @carrasco_111 que hoy ha sido un dia increíble!,te amo!!!!", "clean": "y decir como todos los dias a @carrasco_111 que hoy ha sido un dia increíble!,te amo!!!!"}
+{"noisy": "@_mariola_ esq veo esas cosillas y no puedo evitar pensar en mi media naranjilla de valencia jaajja", "clean": "@_mariola_ es_que veo esas cosillas y no puedo evitar pensar en mi media naranjilla de valencia ja"}
+{"noisy": "@fco_jose96 me encantas, lo sabes?:$.", "clean": "@fco_jose96 me encantas, lo sabes?:$."}
+{"noisy": "yo lo he intentado pero no recibo señales", "clean": "yo lo he intentado pero no recibo señales"}
+{"noisy": "dios mio ! la puerta de mi habitación se ha abierto sola! estaba cerrada totalmente! que yuyu xd", "clean": "dios mío ! la puerta de mi habitación se ha abierto sola! estaba cerrada totalmente! que yuyu xd"}
+{"noisy": "no tengo sueño por su culpaa (::??", "clean": "no tengo sueño por su culpa (::"}
+{"noisy": "y esas son las cosas que se me vienen a la cabeza un luneeeees a las 2:05.", "clean": "y esas son las cosas que se me vienen a la cabeza un lunes a las 2:05."}
+{"noisy": "no quiero entrar a claseee ,,,,", "clean": "no quiero entrar a clase ,,,,"}
+{"noisy": "yo creo que por hoy ya vale, #buenasnoches", "clean": "yo creo que por hoy ya vale, #buenasnoches"}
+{"noisy": "mi sonrisa es mas grandeeeee que mis problemas.", "clean": "mi sonrisa es mas grande que mis problemas."}
+{"noisy": "oins q agustito en el.#sooufa!!!", "clean": "oins q agustito en el.#sooufa!"}
+{"noisy": "#twitterosquemecaenbiensinconocer @djoytwihard porque es mi gemela *__*", "clean": "#twitterosquemecaenbiensinconocer @djoytwihard porque es mi gemela *__*"}
+{"noisy": "'abrir la ventana, colgar los problemas al sol'", "clean": "'abrir la ventana, colgar los problemas al sol'"}
+{"noisy": "a descansar un pokitin y a las claseeeesss", "clean": "a descansar un poquitín y a las clases"}
+{"noisy": "que pronto se acaba lo bueno! buena #acampada2013 :)", "clean": "que pronto se acaba lo bueno! buena #acampada2013 :)"}
+{"noisy": "@mace_44 rojas verdes y amarillas!, ami me gustan las pastillas!!!! jajajajajajajaaaa!, que de risas por dios! xddddd", "clean": "@mace_44 rojas verdes y amarillas!, ami me gustan las pastillas!!!! jajajajajajaja!, que de risas por dios! xddddd"}
+{"noisy": "@faroleraaaaa ojala sus padres les enseñen en casa y le pongan eres maricon en la nevera y se tengan que follar a su madre.", "clean": "@faroleraaaaa ojala sus padres les enseñen en casa y le pongan eres maricón en la nevera y se tengan que follar a su madre."}
+{"noisy": "@lluch_miguel y que va a decir su madre si estará avergonzada de tener la hija que tiene y de lo que esta haciendo.... #yanohayboda", "clean": "@lluch_miguel y que va a decir su madre si estará avergonzada de tener la hija que tiene y de lo que esta haciendo.... #yanohayboda"}
+{"noisy": "@migueleferndez8 eres inconfundible dejando espacios antes de los signos de interrogación", "clean": "@migueleferndez8 eres inconfundible dejando espacios antes de los signos de interrogación"}
+{"noisy": "pues nadaaaaa, tendre que moverme.", "clean": "pues nada, tendré que moverme."}
+{"noisy": "@martapellisso @mariadelmarg7 ohhh mis niñas preciosas tengo muchas ganas de veros !! os quiero♥", "clean": "@martapellisso @mariadelmarg7 ohhh mis niñas preciosas tengo muchas ganas de veros !! os quiero♥"}
+{"noisy": "@kurtcomeback_ si te llamas nacho y haces fotos muy buenas no es asi o he quedado mal?", "clean": "@kurtcomeback_ si te llamas nacho y haces fotos muy buenas no es asi o he quedado mal?"}
+{"noisy": "@alph4dan ay gaona , ¡qué hombre! ^^", "clean": "@alph4dan ay gaona , ¡qué hombre! ^^"}
+{"noisy": "todo en exceso es malo menos las vacaciones", "clean": "todo en exceso es malo menos las vacaciones"}
+{"noisy": "k mala suerte coñooo se me a roto el móvil", "clean": "k mala suerte coño se me a roto el móvil"}
+{"noisy": "@sergiomrqz10 jajajpero esq si no hubiera sido por esa preciosa llamda no me hubieras visto;) que era muy tarde ya jo era hora de levantarse", "clean": "@sergiomrqz10 ja_pero es_que si no hubiera sido por esa preciosa llamada no me hubieras visto;) que era muy tarde ya jo era hora de levantarse"}
+{"noisy": "recuerda qur lo hice por ti..", "clean": "recuerda que lo hice por ti.."}
+{"noisy": "sin un derroche, ni un gesto de impaciencia ni una costosa recaída en el entusiasmo.", "clean": "sin un derroche, ni un gesto de impaciencia ni una costosa recaída en el entusiasmo."}
+{"noisy": "@marta10mc @asundelosreyes @mane15amnesia @marialguacil97 @carmen19696 diiiiiiioooooooo jajjajajajajajajajajajajajajajajajajajajajajaja", "clean": "@marta10mc @asundelosreyes @mane15amnesia @marialguacil97 @carmen19696 dios ja"}
+{"noisy": "me levantado diciendo lauraaa hace mucho sol que quiero ponerme morena..", "clean": "me levantado diciendo laura hace mucho sol que quiero ponerme morena.."}
+{"noisy": "#markoslibertad defender a nuestro pais no es un delito", "clean": "#markoslibertad defender a nuestro país no es un delito"}
+{"noisy": "(+) y el gilipollas de mourinho lo único que está haciendo es destruir el madridismo desde dentro.", "clean": "(+) y el gilipollas de mourinho lo único que está haciendo es destruir el madridismo desde dentro."}
+{"noisy": "@arribassara @siilviia_diaz cri criiii, yo te puedo cooon un dedo sara :)", "clean": "@arribassara @siilviia_diaz cri cri, yo te puedo con un dedo sara :)"}
+{"noisy": "con mi último rt dejo patente que es imposible que no esté enganchada a twitter .", "clean": "con mi último rt dejo patente que es imposible que no esté enganchada a twitter ."}
+{"noisy": "¡nuestra web ya está publicada! si no podéis esperar, visitad: http://t.co/vtajp2sume", "clean": "¡nuestra web ya está publicada! si no podéis esperar, visitad: http://t.co/vtajp2sume"}
+{"noisy": "no aguanto al tipico sevillano/a egocentrico ,lo siento asi pienso y he pnsao to mi vida y ojo!mi novio es sevillano y part d mis amig@s tb ..", "clean": "no aguanto al tipico sevillano/a egocéntrico ,lo siento asi pienso y he pensado toda mi vida y ojo!mi novio es sevillano y parte d mis amigos también .."}
+{"noisy": "@fernandof_88 @_lucia4 @javier_galgero ostia !! sii ?? jajajajajajaja pues yo te aviso primoo ajajajjaja me partoo :) !!!!!!", "clean": "@fernandof_88 @_lucia4 @javier_galgero ostia !! sí ?? jajajajajajaja pues yo te aviso primo ja me parto :) !!!!"}
+{"noisy": "@bigmartus ola keeeer lo que tu aseh", "clean": "@bigmartus ola qué_es lo que tu haces"}
+{"noisy": "@adrianhill661 jajajaja tssss !!! si dspue abandonas!!", "clean": "@adrianhill661 jajajaja chis !!! si después abandonas!!"}
+{"noisy": "@alfredocalle9 mis pumas en verano metieron 80 goles.. asinque ..preparate para no moverte..jajajaja", "clean": "@alfredocalle9 mis pumas en verano metieron 80 goles.. así_que ..preparate para no moverte..jajajaja"}
+{"noisy": "lo mejooor es que me da igual todo soi feliz", "clean": "lo mejor es que me da igual todo soy feliz"}
+{"noisy": "hoy a algunas personas les daba una pa tada en la boca para que se callaran.", "clean": "hoy a algunas personas les daba una para tada en la boca para que se callaran."}
+{"noisy": "noooo quiero dormirme pa que no llegueeee mañana.... #odiandolarutina", "clean": "no quiero dormirme pa que no llegue mañana.... #odiandolarutina"}
+{"noisy": "sale el anuncio en la radio del centro comercial de la zenia y dicen: de la z a la a. y dice mi madre: o sea que zara sí que está jajajajaja", "clean": "sale el anuncio en la radio del centro comercial de la zenia y dicen: de la z a la a. y dice mi madre: o sea que zara sí que está jajajajaja"}
+{"noisy": "@sandraflamencah @mariaespinoosa @mantoniatenorio evidentemente q para gusto...pero maría es artista d los pies a la cabeza,al igual q toñi !", "clean": "@sandraflamencah @mariaespinoosa @mantoniatenorio evidentemente q para gusto...pero maría es artista d los pies a la cabeza,al igual q toñi !"}
+{"noisy": "joder no me quito la lluvia macho.", "clean": "joder no me quito la lluvia macho."}
+{"noisy": "@marinnyadira me ha faltao el canto un duro pa montar yo el drama allí.... ☹", "clean": "@marinnyadira me ha faltado el canto un duro para montar yo el drama allí.... ☹"}
+{"noisy": "@danielplugiiiiin o shine acoustic :)", "clean": "@danielplugin o shine acoustic :)"}
+{"noisy": "@adriiaanaa1 a mi no me hace graciiaaaaa -_-", "clean": "@adriiaanaa1 a mi no me hace gracia -_-"}
+{"noisy": "@b17bebeto y queee gane 2 a 0 dos de demarco", "clean": "@b17bebeto y que gane 2 a 0 dos de demarco"}
+{"noisy": "apuntada en el gym , a ver cuanto duro. suena subreal.", "clean": "apuntada en el gym , a ver cuanto duro. suena subreal."}
+{"noisy": "hace sol, llueve, hace sol, graniza... hace un día iguaaaaal de bipolar que yo.!?", "clean": "hace sol, llueve, hace sol, graniza... hace un día igual de bipolar que yo."}
+{"noisy": "@aaronlo7 jaja que boooonico l", "clean": "@aaronlo7 jaja que bonico l"}
+{"noisy": "ahi va la gorda nenee !!!!", "clean": "ahí va la gorda nene !!!!"}
+{"noisy": "al final el que no ha cambiado la hora ha sido don pabliukas guti vega", "clean": "al final el que no ha cambiado la hora ha sido don pabliukas guti vega"}
+{"noisy": "pensaba que era diferente, pero es igual de idiota que lo demás.", "clean": "pensaba que era diferente, pero es igual de idiota que lo demás."}
+{"noisy": "@juanfribenitez @99franka99 jajaja tuu solito te das por aludido.. es qe te encanta ser el centro de atención ooogggg !!! jajajaja", "clean": "@juanfribenitez @99franka99 jajaja tú solito te das por aludido.. es que te encanta ser el centro de atención oh !!! jajajaja"}
+{"noisy": "de café y cartas en el olivo con @josediego217 @juanfrancisco_8", "clean": "de café y cartas en el olivo con @josediego217 @juanfrancisco_8"}
+{"noisy": "entre la lluvia y los cojones fritos esta noche no estoi durmiendo una mierda. q rayadas d cabeza q asco i q asco.", "clean": "entre la lluvia y los cojones fritos esta noche no estoy durmiendo una mierda. q rayadas d cabeza q asco i q asco."}
+{"noisy": "de vuelta de semana santa un domingo desde logroño se lîa por un perrito y nunca pararemoooos en esa gasolinera http://t.co/nvd77bwzbz", "clean": "de vuelta de semana santa un domingo desde logroño se lía por un perrito y nunca pararemos en esa gasolinera http://t.co/nvd77bwzbz"}
+{"noisy": "ria se me ha vuelto aaaa poner de morena (?) me encanta.", "clean": "ria se me ha vuelto a poner de morena (?) me encanta."}
+{"noisy": "@jary_17 y yo la musica;) jajajajajaj tu y yo tenemos charlita pendiente eh jajaja", "clean": "@jary_17 y yo la musica;) ja tu y yo tenemos charlita pendiente eh jajaja"}
+{"noisy": "montate de cada dia que pasa tu propia pelicula sin importarte el protagonismo que llege a tener .", "clean": "montate de cada dia que pasa tu propia película sin importarte el protagonismo que llegue a tener ."}
+{"noisy": "y hoy de vuelta a ortuellaaa :)", "clean": "y hoy de vuelta a ortuella :)"}
+{"noisy": "@nestur9 tendre que ahorrar para ir en tren..", "clean": "@nestur9 tendré que ahorrar para ir en tren.."}
+{"noisy": "pues han sido unas muy buenas meriendaaaas hasta ahora, las mejores, yo creo q ya ns despedimos hasta el añooooo q viene!!;)", "clean": "pues han sido unas muy buenas meriendas hasta ahora, las mejores, yo creo q ya nos despedimos hasta el año q viene!!;)"}
+{"noisy": "@pinnkvelvet no puedo con tu foto jajajajajjajaj , preciosa &lt;3", "clean": "@pinnkvelvet no puedo con tu foto ja , preciosa &lt;3"}
+{"noisy": "y esto de que la gente ya este durmiendo o se valla a dormir y yo me puedo quedar asta que quiera por que mañana no tenho clase mola :))", "clean": "y esto de que la gente ya este durmiendo o se valla a dormir y yo me puedo quedar asta que quiera por que mañana no tengo clase mola :))"}
+{"noisy": "todo va a salir bien @arteaga_jm !!! te quiero y siempre estaré a tu lado.", "clean": "todo va a salir bien @arteaga_jm !!! te quiero y siempre estaré a tu lado."}
+{"noisy": "no quiero levantarme todavía quiero dormir hasta las tres joder #misionimposibleenmicasa", "clean": "no quiero levantarme todavía quiero dormir hasta las tres joder #misionimposibleenmicasa"}
+{"noisy": "todos los que veraneamos en vera tenemos que seguir a @veraenfurecida y @postureovera", "clean": "todos los que veraneamos en vera tenemos que seguir a @veraenfurecida y @postureovera"}
+{"noisy": "#sinhambreporlavida juum :| :| :|", "clean": "#sinhambreporlavida hum :| :| :|"}
+{"noisy": "y me consumo como una vela no queda nadie a mi alrededor!?", "clean": "y me consumo como una vela no queda nadie a mi alrededor"}
+{"noisy": "@ubuntu_apps no. de momento podrá competir con windows phone , firefoxos y poco mas...", "clean": "@ubuntu_apps no. de momento podrá competir con windows phone , firefox_os y poco mas..."}
+{"noisy": "valla putooo dia de mierda ..... q ascoo de todo", "clean": "valla puto dia de mierda ..... q asco de todo"}
+{"noisy": "@susoooo07 atlético fans hooligans , un tio imparcial, con criterio.", "clean": "@suso07 atlético fans hooligans , un tío imparcial, con criterio."}
+{"noisy": "0. mencioname para saber que estas haciendo el cuestionario: 450 preguntas. ( @nikinikida )", "clean": "0. mencioname para saber que estas haciendo el cuestionario: 450 preguntas. ( @nikinikida )"}
+{"noisy": "el que se rieee del mal del vecino ... el suyooooo viene de camino ...", "clean": "el que se ríe del mal del vecino ... el suyo viene de camino ..."}
+{"noisy": "siempre me pasa lo mismo.", "clean": "siempre me pasa lo mismo."}
+{"noisy": "quiero saber el secreto de el helado!!!! universo escuchame que luego no te enteras!!", "clean": "quiero saber el secreto de el helado!!!! universo escuchame que luego no te enteras!!"}
+{"noisy": "ven que vamos hacer un pacto yo y tu sonrisa", "clean": "ven que vamos hacer un pacto yo y tu sonrisa"}
+{"noisy": "yo me entierrro , me pierdo x la tierra paso de la situación", "clean": "yo me entierro , me pierdo x la tierra paso de la situación"}
+{"noisy": "ni contigooo, ni siiiin ti.", "clean": "ni contigo, ni sin ti."}
+{"noisy": "os dejo la entrevista que me han realizado en @hiphunters sobre moda, curiosidades,... en inglés y en español. :) http://t.co/bk5l7ar2z0", "clean": "os dejo la entrevista que me han realizado en @hiphunters sobre moda, curiosidades,... en inglés y en español. :) http://t.co/bk5l7ar2z0"}
+{"noisy": "¿porqué me tengo que levantar ahora con lo agusto que estaba durmiendo? buenos días de todas formas.", "clean": "¿porqué me tengo que levantar ahora con lo agusto que estaba durmiendo? buenos días de todas formas."}
+{"noisy": "tarde de playita con el danes y @miguellorente89 jaja", "clean": "tarde de playita con el danés y @miguellorente89 jaja"}
+{"noisy": "buenos días ahora sí que me levanto como la princesa de @celiaa_fdez12!!", "clean": "buenos días ahora sí que me levanto como la princesa de @celiaa_fdez12"}
+{"noisy": "@didss95 no no no. la coca. primer aviso", "clean": "@didss95 no no no. la coca. primer aviso"}
+{"noisy": "no vale pena llorar, por un amor que se fue si el decidió marcharse que le valla bien(8)", "clean": "no vale pena llorar, por un amor que se fue si el decidió marcharse que le valla bien(8)"}
+{"noisy": "de nuevo una semana de ilusión a raudales, la misma que tiene el bueno de @iturra_colocho. ahí va una foto con él.", "clean": "de nuevo una semana de ilusión a raudales, la misma que tiene el bueno de @iturra_colocho. ahí va una foto con él."}
+{"noisy": "@dj_rebee si puede ser que le salte los sesos a la fanfarrona esta me esta artando mucho y al final se va a liar y muy gorda. #nodigomas !!", "clean": "@dj_rebee si puede ser que le salte los sesos a la fanfarrona esta me esta hartando mucho y al final se va a liar y muy gorda. #nodigomas !!"}
+{"noisy": "de puente a puente y dejo que me lleve la corriente", "clean": "de puente a puente y dejo que me lleve la corriente"}
+{"noisy": "@josedivieso y tu no eres jilipollas a que no???", "clean": "@josedivieso y tu no eres gilipollas a que no?"}
+{"noisy": "que dia mas triste no verte mas te quiero siempre estaras con nosotrs", "clean": "que dia mas triste no verte mas te quiero siempre estarás con nosotros"}
+{"noisy": "he muerto en rl intento de dormir y @raquel1209 se rie de miii :(", "clean": "he muerto en el intento de dormir y @raquel1209 se ríe de mí :("}
+{"noisy": "huuuuyy como está la cosa no?? si el gallo no canta será porque tiene algo en la garganta, no??", "clean": "uy como está la cosa no?? si el gallo no canta será porque tiene algo en la garganta, no??"}
+{"noisy": "@_innmaa95vp jajaaa ija puta...lo restriegas por toa la cara?", "clean": "@_innmaa95vp ja hija puta...lo restriegas por toa la cara?"}
+{"noisy": "siempre senti cosaas qe el corazoooon fue testigo...", "clean": "siempre sentí cosas que el corazón fue testigo..."}
+{"noisy": "@bipp_ip mira: documento histórico https://t.co/x30idmzqar", "clean": "@bipp_ip mira: documento histórico https://t.co/x30idmzqar"}
+{"noisy": "@mariajosu68 qué tal el sábado? @cristina_jaen y yo nos quedamos con ganas de verte", "clean": "@mariajosu68 qué tal el sábado? @cristina_jaen y yo nos quedamos con ganas de verte"}
+{"noisy": "después de una semama inmejorable, me preparo para volver a empezar. con más ganas que nunca. buenas noches.", "clean": "después de una semana inmejorable, me preparo para volver a empezar. con más ganas que nunca. buenas noches."}
+{"noisy": "\"mi boca nunca se acaba\".", "clean": "\"mi boca nunca se acaba\"."}
+{"noisy": "si no puedo dormir y son las 7 y me levanto alas 9? #mevoyamorir #mematanlosnervios", "clean": "si no puedo dormir y son las 7 y me levanto alas 9? #mevoyamorir #mematanlosnervios"}
+{"noisy": "@carmenparda no hay conductora mas sexy . te quiero preciosa", "clean": "@carmenparda no hay conductora mas sexy . te quiero preciosa"}
+{"noisy": "@paula_villarej ñaves sígueme y calla", "clean": "@paula_villarej ñaves sígueme y calla"}
+{"noisy": "@jurgi1998 lo de no te vayas haces gaupasa with my o algo asin", "clean": "@jurgi1998 lo de no te vayas haces gaupasa with my o algo asín"}
+{"noisy": "ps a dormir mosqueada al saber q el viernes, si, este viernes, fiesta d primavera, llueveeeee.", "clean": "pues a dormir mosqueada al saber q el viernes, si, este viernes, fiesta d primavera, llueve."}
+{"noisy": "hoy es día de regresos. a la noche derrick rose vuelve a las pistas. pero antes @rafaction4 vuelve al gym . #thereturn", "clean": "hoy es día de regresos. a la noche derrick rose vuelve a las pistas. pero antes @rafaction4 vuelve al gym . #thereturn"}
+{"noisy": "http://t.co/amzsncfhgd ai como le echo de menos.", "clean": "http://t.co/amzsncfhgd ai como le echo de menos."}
+{"noisy": "@javimerinomusic joe ! me los tengo que pillar ;) jejeje", "clean": "@javimerinomusic joder ! me los tengo que pillar ;) jejeje"}
+{"noisy": "no te fijes en lo que has perdido, sino en lo que te queda por ganar, @davidmenendezv", "clean": "no te fijes en lo que has perdido, sino en lo que te queda por ganar, @davidmenendezv"}
+{"noisy": "#elpetaitodemontesion iva empujando este #misteriocoche http://t.co/8pf5asxcvb el solo jajaja", "clean": "#elpetaitodemontesion iva empujando este #misteriocoche http://t.co/8pf5asxcvb el solo jajaja"}
+{"noisy": "si no luchas por lo que tienes. no llores por lo que pierdes.... @andressitocm @jonahtancabezas", "clean": "si no luchas por lo que tienes. no llores por lo que pierdes.... @andressitocm @jonahtancabezas"}
+{"noisy": "¿qué sería de @belendelgador y de mí sin esa señal de tráfico para estirar después de la pechá q nos hemos metido en el parque?", "clean": "¿qué sería de @belendelgador y de mí sin esa señal de tráfico para estirar después de la pechada q nos hemos metido en el parque?"}
+{"noisy": "@cartones01 a qué hora te dormistes anoche? yo a las 12 largittaa ..!!", "clean": "@cartones01 a qué hora te dormiste anoche? yo a las 12 larguita .."}
+{"noisy": "@hugorusadir madre mía! aquí estamos mosqueados pero por otras cosas, no por eso", "clean": "@hugorusadir madre mía! aquí estamos mosqueados pero por otras cosas, no por eso"}
+{"noisy": "despues de una buena visitilla de @sancheez13 , a seguir con el dibujiito", "clean": "después de una buena visitilla de @sancheez13 , a seguir con el dibujito"}
+{"noisy": "es que el bbk es tan perfecto...", "clean": "es que el bbk es tan perfecto..."}
+{"noisy": "me da igual que no me traiga un regalo de allí, el mejor regalo lo tengo día tras día. http://t.co/icttqtk5lq", "clean": "me da igual que no me traiga un regalo de allí, el mejor regalo lo tengo día tras día. http://t.co/icttqtk5lq"}
+{"noisy": "@fati_241 no lo sabíaaaas? soy el má guay y el má malo y richi es pene largo digo corto* #lgdc", "clean": "@fati_241 no lo sabías? soy el más guay y el más malo y richi es pene largo digo corto* #lgdc"}
+{"noisy": "para mi ya no eres nada solo una sucia ramera.", "clean": "para mi ya no eres nada solo una sucia ramera."}
+{"noisy": "@adricastro6 nbeeeaaa y eso? que le pasa a tu ojiyo ? :d", "clean": "@adricastro6 no_veas y eso? que le pasa a tu ojillo ? :d"}
+{"noisy": "con ganas de que venga a verme @juananmarley mi hermaanito me tiene abandonaa !!! :((!!", "clean": "con ganas de que venga a verme @juananmarley mi hermanito me tiene abandonada !!! :(("}
+{"noisy": "lo malo no es trompezar con la piedra si no que te guste.", "clean": "lo malo no es tropezar con la piedra si no que te guste."}
+{"noisy": "tengo ganas de que llegues ah casa yo mas....", "clean": "tengo ganas de que llegues ah casa yo mas...."}
+{"noisy": "loo exoo maazooo dee menooss puuff :(", "clean": "loo echo mazo de menos puf :("}
+{"noisy": "oye oye. k pasa aki eh. :'( @lauuuura99 @triihdd", "clean": "oye oye. k pasa aquí eh. :'( @lauuuura99 @triihdd"}
+{"noisy": "ya sabes que no resisto mucho una mirada, mucho menos una tuya.", "clean": "ya sabes que no resisto mucho una mirada, mucho menos una tuya."}
+{"noisy": "\" la sonrisa mas bella llega después de la lagrima mas dolorosa.\"", "clean": "\" la sonrisa mas bella llega después de la lagrima mas dolorosa.\""}
+{"noisy": "@mariagodino94 @kimbherlynmo :o al vais a banda habra ke veros xdd", "clean": "@mariagodino94 @kimbherlynmo :o al vais a banda habrá que veros xdd"}
+{"noisy": "pues en mi pueblo no cae ni gota. vivir en el culo del mundo, mola.", "clean": "pues en mi pueblo no cae ni gota. vivir en el culo del mundo, mola."}
+{"noisy": "empezando fuerte abril, con un desayuno como dios manda; gofre y cola-cao ^^ http://t.co/op5wyez9mw", "clean": "empezando fuerte abril, con un desayuno como dios manda; gofre y cola_cao ^^ http://t.co/op5wyez9mw"}
+{"noisy": "a veces la solución está en desaparecer por un tiempo.", "clean": "a veces la solución está en desaparecer por un tiempo."}
+{"noisy": "@borjez_fdez96 no se meeee haaaa perdido nada en francia :p pero si quisiese lo haria", "clean": "@borjez_fdez96 no se me ha perdido nada en francia :p pero si quisiese lo haría"}
+{"noisy": "@alwayslibelula @anadelafebravo @xemaa_14 noooo quereis camping? tomo nota", "clean": "@alwayslibelula @anadelafebravo @xemaa_14 no queréis camping? tomo nota"}
+{"noisy": "quiero tranquileo del bueno hoy..!!!!!", "clean": "quiero tranquilidad del bueno hoy..!!!"}
+{"noisy": "no sabes el daño que haces.", "clean": "no sabes el daño que haces."}
+{"noisy": "antes no la queria y ahora quiero verla todos los dias", "clean": "antes no la quería y ahora quiero verla todos los dias"}
+{"noisy": "riesgo de lluvia hoy? me cago en tus muertos", "clean": "riesgo de lluvia hoy? me cago en tus muertos"}
+{"noisy": "@anita_9930 macho tiras todo torpe", "clean": "@anita_9930 macho tiras todo torpe"}
+{"noisy": "@crishmc asdfggbjkkkl ¿si? joder tengo que estar en primera fila como sea.", "clean": "@crishmc asdfggbjkkkl ¿si? joder tengo que estar en primera fila como sea."}
+{"noisy": "@mariakodak ay no lo creo pero me has alegradp la mañana con este despertar. guapa tú! .buenos dias.", "clean": "@mariakodak ay no lo creo pero me has alegrado la mañana con este despertar. guapa tú! .buenos dias."}
+{"noisy": "@ann_gv @marisanchezt12 y yo a tii pelurroja:3", "clean": "@ann_gv @marisanchezt12 y yo a ti pelurroja:3"}
+{"noisy": "creo que despues de dar un paseito con simba me tumbare un ratito en el sillón", "clean": "creo que después de dar un paseito con simba me tumbare un ratito en el sillón"}
+{"noisy": "tu sabrás a lo que juegas,pero a mi no me la vuelves a jugar.", "clean": "tu sabrás a lo que juegas,pero a mi no me la vuelves a jugar."}
+{"noisy": "@karinbourguigno pues sii aver si me dejan en el trabajo un poco pues ya nos kedan 2 o asi asik genial la verdad ktal vosotrs ??un besitoo", "clean": "@karinbourguigno pues sí aver si me dejan en el trabajo un poco pues ya nos quedan 2 o asi así_que genial la verdad qué_tal vosotros ??un besito"}
+{"noisy": "@mtrin93 lo de angustiaaa sobra jajajajajaajajaaaaa", "clean": "@mtrin93 lo de angustia sobra ja"}
+{"noisy": "buena caminata la de hoy cn @cato_alicun casi tres horas y unos 13km jaja", "clean": "buena caminata la de hoy con @cato_alicun casi tres horas y unos 13km jaja"}
+{"noisy": "en hora y media me voy para coruña... ¡qué pereza!", "clean": "en hora y media me voy para coruña... ¡qué pereza!"}
+{"noisy": "en la vida con cuidado hay que caminar #andandoconzapatosdecristal", "clean": "en la vida con cuidado hay que caminar #andandoconzapatosdecristal"}
+{"noisy": "@elduke96 pues pooor que ayer estuve en tuuu pueblooo !!", "clean": "@elduke96 pues por que ayer estuve en tu pueblo !!"}
+{"noisy": "@ralfdez muchas gracias por seguirme :))) me a sorprendido ;)", "clean": "@ralfdez muchas gracias por seguirme :))) me a sorprendido ;)"}
+{"noisy": "@soyelcapi muy cierto, a mi me ha pasado!!", "clean": "@soyelcapi muy cierto, a mi me ha pasado!!"}
+{"noisy": "@nea_rufi @mariiaaro @chuskasf @nataalia10 @carmen_xd_90 guapaaa !!ganas pr vernos y echar unas risitas siii ,por lo demás nooo !!!jajajajaja", "clean": "@nea_rufi @mariiaaro @chuskasf @nataalia10 @carmen_xd_90 guapa !!ganas para vernos y echar unas risitas sí ,por lo demás no !!!jajajajaja"}
+{"noisy": "no os esforcéis por encontrar a la mejor, por que la tengo yo. http://t.co/44ypmt2ifn", "clean": "no os esforcéis por encontrar a la mejor, por que la tengo yo. http://t.co/44ypmt2ifn"}
+{"noisy": "como mola retwitear a las tontas de la zona. jejejejejejejejeje", "clean": "como mola retwittear a las tontas de la zona. jejejejejejejejeje"}
+{"noisy": "momentos de estos despueees de una semana santa...son los que meeeee gustan!!!!! :d??", "clean": "momentos de estos después de una semana santa...son los que me gustan!!!!! :d"}
+{"noisy": "típico: te ven en la calle y no te saludan, te conectas y te dicen \"te vi\"??", "clean": "típico: te ven en la calle y no te saludan, te conectas y te dicen \"te vi\""}
+{"noisy": "la gente se piensa que soy estúpido ... bueh si soy estúpido pero me doy cuenta de que me están boludeando #aviso", "clean": "la gente se piensa que soy estúpido ... bah si soy estúpido pero me doy cuenta de que me están boludeando #aviso"}
+{"noisy": "#dormiresdecobardes tony parker 23 ptos / 5 rbts / 11 asis", "clean": "#dormiresdecobardes tony parker 23 puntos / 5 rebotes / 11 asis"}
+{"noisy": "@mariomarin35 yo tambien que? jaja", "clean": "@mariomarin35 yo también que? jaja"}
+{"noisy": "alomejor no nos a pillao todo el chaparron corriendo @manumartinezca1 jajajajaaja #qemotivados ;p", "clean": "a_lo_mejor no nos a pillado todo el chaparrón corriendo @manumartinezca1 ja #qemotivados ;p"}
+{"noisy": "@mariaperez89 @luceromexico @lucerofanespana pasaa link creo que estoy registrado? pero hace mucho que no me meto", "clean": "@mariaperez89 @luceromexico @lucerofanespana pasa link creo que estoy registrado? pero hace mucho que no me meto"}
+{"noisy": "k #bien me a sentado esta ducha k me akabo d dar!!", "clean": "k #bien me a sentado esta ducha k me acabo d dar!!"}
+{"noisy": "me quieren quitar el mobil al volver al instituto... em vereis , o me gravais un puto disco con mi musica o me pego un tiro, no jodais", "clean": "me quieren quitar el móvil al volver al instituto... eh veréis , o me grabáis un puto disco con mi musica o me pego un tiro, no jodáis"}
+{"noisy": "en londres sin parar y yo con estos pelos... la culpa es de mi adorada rosa, pero a mí me encantan. #sarnacongusto http://t.co/p5sjzorrli", "clean": "en londres sin parar y yo con estos pelos... la culpa es de mi adorada rosa, pero a mí me encantan. #sarnacongusto http://t.co/p5sjzorrli"}
+{"noisy": "la vida nos da lo que nos merecemos si tratas a todos por igual la vida te tratara como a todos.", "clean": "la vida nos da lo que nos merecemos si tratas a todos por igual la vida te tratara como a todos."}
+{"noisy": "yo flipo demasiado, ai mai .", "clean": "yo flipo demasiado, ai mai ."}
+{"noisy": "@criss_alcompas jajajajajaja entonces tu alli con la vecina no te aburres jajajajaja", "clean": "@criss_alcompas jajajajajaja entonces tu allí con la vecina no te aburres jajajajaja"}
+{"noisy": "mirian sabe lo q ha echo po eso llama a su mama zorraica", "clean": "mirian sabe lo q ha echo por eso llama a su mama zorraica"}
+{"noisy": "esa violencia que teneis dentro de donde ha salio ? vas a explotar señooooor", "clean": "esa violencia que tenéis dentro de donde ha salio ? vas a explotar señor"}
+{"noisy": "@carmenccano @mariaaaaa17ll iraaaaaaa jajajaa no nooooo no lo contrario jejej", "clean": "@carmenccano @maria17ll ira ja no no no lo contrario je"}
+{"noisy": "@sorayacf tu mini con zodiac ! que bien vivís! un beso http://t.co/itkud2y56v", "clean": "@sorayacf tu mini con zódiac ! que bien vivís! un beso http://t.co/itkud2y56v"}
+{"noisy": "otro dia sin dormir jaja esto empieza aaa convertirse en malaaaaa costumbre", "clean": "otro dia sin dormir jaja esto empieza a convertirse en mala costumbre"}
+{"noisy": "no siempre los chicos son imbeciles http://t.co/pm1jozkhd5", "clean": "no siempre los chicos son imbéciles http://t.co/pm1jozkhd5"}
+{"noisy": "peliculita cn mi compare @aleefranco16", "clean": "peliculita con mi compare @aleefranco16"}
+{"noisy": "lo que esta lloviendo por cuevas bajas madre mia", "clean": "lo que esta lloviendo por cuevas bajas madre mía"}
+{"noisy": "\"pasaran los años pero tu seguiras formando parte de mi historia.\"", "clean": "\"pasaran los años pero tu seguirás formando parte de mi historia.\""}
+{"noisy": "@dami85ho así es amiga mía, cuando menos te esperas va la vida y te sorprende, a mí digamos que me lo ha demostrado también :d", "clean": "@dami85ho así es amiga mía, cuando menos te esperas va la vida y te sorprende, a mí digamos que me lo ha demostrado también :d"}
+{"noisy": "si, mi madre es aurori la peluquera. pero… @carloshr1995 http://t.co/vdmsbukiti", "clean": "si, mi madre es aurori la peluquera. pero… @carloshr1995 http://t.co/vdmsbukiti"}
+{"noisy": "@nachogm27 yam jajaja te has ganado una colleja xd", "clean": "@nachogm27 yam jajaja te has ganado una colleja xd"}
+{"noisy": "@fatiiifati ya eh? es ke no aguanto na ... jajajjaja", "clean": "@fatiiifati ya eh? es que no aguanto nada ... ja"}
+{"noisy": "a yo digooo k va ser un empateeee la verdad jaja", "clean": "a yo digo k va ser un empate la verdad jaja"}
+{"noisy": "un dia me dijeron q si una persona no expresa sus sentimiento de lo q siente o lo q quiere acer en un futuro no sera nadiee ;)", "clean": "un dia me dijeron q si una persona no expresa sus sentimiento de lo q siente o lo q quiere hacer en un futuro no sera nadie ;)"}
+{"noisy": "@lauraloveom jajaja, yo mas bubu , chica loca :3", "clean": "@lauraloveom jajaja, yo mas bubu , chica loca :3"}
+{"noisy": "muy buenooos dias!! empezamos c0n buenn pien el mes!!!!:p", "clean": "muy buenos dias!! empezamos c0n buen pie el mes!!!!:p"}
+{"noisy": "@bykikomatamoros qué te pasa a ti con iker ? diego y valdés lo estarán haciendo bien, pero que rápido olvidamos. a mou le falta humildad.", "clean": "@bykikomatamoros qué te pasa a ti con íker ? diego y valdés lo estarán haciendo bien, pero que rápido olvidamos. a mou le falta humildad."}
+{"noisy": "'me ahogo en un vaso de agua si no estás'", "clean": "'me ahogo en un vaso de agua si no estás'"}
+{"noisy": "viendo a @inmaps_91 en la tele como toca la #trompeta", "clean": "viendo a @inmaps_91 en la tele como toca la #trompeta"}
+{"noisy": "@mariagm1999 jajajajaja que tonnnnticaaaaa eres l", "clean": "@mariagm1999 jajajajaja que tontica eres l"}
+{"noisy": "la pesadilla del hombre que tenía el pene oculto.", "clean": "la pesadilla del hombre que tenía el pene oculto."}
+{"noisy": "me toco clary fray. ¿has leido el libro? si. ¿te gusta? me encanta, soy nefilim hasta la muerte.", "clean": "me toco clary fray. ¿has leído el libro? si. ¿te gusta? me encanta, soy nefilim hasta la muerte."}
+{"noisy": "@sardinazoologic gracias x seguime", "clean": "@sardinazoologic gracias x seguirme"}
+{"noisy": "\"perdoname por querer entregarte mi vida,por querer darte mis ilusiones,mi tiempo, mis ganas y curar tus heridas\"..", "clean": "\"perdoname por querer entregarte mi vida,por querer darte mis ilusiones,mi tiempo, mis ganas y curar tus heridas\".."}
+{"noisy": "¿qué más cosas faltan por sacar de la monarquía?.", "clean": "¿qué más cosas faltan por sacar de la monarquía?."}
+{"noisy": "@tammaruchi esk esta empiieza kn buen piie sii jajajajaha venga a mandar trabajos diiios mioo las vacaciones la an sentao mu mal jajajaj", "clean": "@tammaruchi es_que esta empieza con buen pie sí jajajajaha venga a mandar trabajos dios mío las vacaciones la an sentado mu mal ja"}
+{"noisy": "a sido muy genial porque eh estado con @elenarb15 y ella es lo mejor ya sabes... ;) tequieromucho !", "clean": "a sido muy genial porque eh estado con @elenarb15 y ella es lo mejor ya sabes... ;) te_quiero_mucho !"}
+{"noisy": "@lidia_ypunto vaya tela cada vez q ve mi mami algo relacionado con gh me pregunta por @martasanchezgh le vo a dar el fono de mami a marta :)", "clean": "@lidia_ypunto vaya tela cada vez q ve mi mami algo relacionado con gh me pregunta por @martasanchezgh le voy a dar el teléfono de mami a marta :)"}
+{"noisy": "un 'te prometo que siempre estaré ahí para todo pequeña' es lo que necesito.", "clean": "un 'te prometo que siempre estaré ahí para todo pequeña' es lo que necesito."}
+{"noisy": "@adri_pobe hoy ya no puedes qedar no?", "clean": "@adri_pobe hoy ya no puedes quedar no?"}
+{"noisy": "\"@edencontrerasde: me tengo que poner en forma, hoy toca correr\" a ver si es verdad!! q ya esta aqui el veranito!!", "clean": "\"@edencontrerasde: me tengo que poner en forma, hoy toca correr\" a ver si es verdad!! q ya esta aquí el veranito!!"}
+{"noisy": "¿cómo no os puede gustar este hombre? http://t.co/ynppbljuxo", "clean": "¿cómo no os puede gustar este hombre? http://t.co/ynppbljuxo"}
+{"noisy": "1 mes para los 15, dulces sueños", "clean": "1 mes para los 15, dulces sueños"}
+{"noisy": "vaya basura de tt solo se salva twd??", "clean": "vaya basura de tt solo se salva twd"}
+{"noisy": "@likanena jajaj al final si que se va acabar el mundo como sigan asi", "clean": "@likanena ja al final si que se va acabar el mundo como sigan asi"}
+{"noisy": "una sonrisaaa significa mucho. dura un segundo pero su recuerdo, a veces, nunca seeeee borra.", "clean": "una sonrisa significa mucho. dura un segundo pero su recuerdo, a veces, nunca se borra."}
+{"noisy": "@dani31youtube @raulblandezr no están bien colocadas. ahí*", "clean": "@dani31youtube @raulblandezr no están bien colocadas. ahí*"}
+{"noisy": "@lucasito_18 q coxinooooo , como dice antoniojajaj", "clean": "@lucasito_18 q cochino , como dice antonio_ja"}
+{"noisy": "guía de seguridad en wordpress (i) http://t.co/y0n8c7wjay!!", "clean": "guía de seguridad en wordpress (i) http://t.co/y0n8c7wjay"}
+{"noisy": "descargando las 1.300 fotos de @misionposible en mi ordenador. qué locura!!! #mp2013", "clean": "descargando las 1.300 fotos de @misionposible en mi ordenador. qué locura!!! #mp2013"}
+{"noisy": "@alex_marti hola me llamo alejandro y cago mas que un oso (; lo cnoces colegui ?", "clean": "@alex_marti hola me llamo alejandro y cago mas que un oso (; lo conoces colega ?"}
+{"noisy": "ola q ase , eres cabra ? ola q aseeeee!!", "clean": "ola q ase , eres cabra ? ola q ase!!"}
+{"noisy": "#meteoalarm en #almería para el 03-04-2013 17:18:00 sobre tormentas de nivel #blanco", "clean": "#meteoalarm en #almería para el 03-04-2013 17:18:00 sobre tormentas de nivel #blanco"}
+{"noisy": "solo la tuya mi amol", "clean": "solo la tuya mi amol"}
+{"noisy": "@anacg511 ya pero yo bajare pa el 20 pico de mayo... o la primera semana se junio", "clean": "@anacg511 ya pero yo bajare pa el 20 pico de mayo... o la primera semana se junio"}
+{"noisy": "si no lo intentaaaas no podrás averiguarlo! :)", "clean": "si no lo intentas no podrás averiguarlo! :)"}
+{"noisy": "felicidades a los feos de @evavalinovelez y @davidbecerra8 pooor sus 2 mesecitos :)", "clean": "felicidades a los feos de @evavalinovelez y @davidbecerra8 por sus 2 mesecitos :)"}
+{"noisy": "lo tuyo es un amor de mentira, no eres feliz con el y pase lo que pase vas a ser mia ...", "clean": "lo tuyo es un amor de mentira, no eres feliz con el y pase lo que pase vas a ser mía ..."}
+{"noisy": "solo una veeeez más -.* @arasipraaaaat", "clean": "solo una vez más -.* @arasiprat"}
+{"noisy": "te quejas de la caza, de que matan animales indefensos, que pobrecillos y tal y cual, pero luego vas a casa y te inflas a filetes.", "clean": "te quejas de la caza, de que matan animales indefensos, que pobrecillos y tal y cual, pero luego vas a casa y te inflas a filetes."}
+{"noisy": "es más fácil culpar a otros de la situación actual que reconocer la propia culpa. las cc.aa. \"ricas\" tienen tanta culpa como las otras 17.", "clean": "es más fácil culpar a otros de la situación actual que reconocer la propia culpa. las cc.aa. \"ricas\" tienen tanta culpa como las otras 17."}
+{"noisy": "hahahahahaha omg el icon de justin .", "clean": "hahahahahaha omg el icono de justin ."}
+{"noisy": "@clariss39188207 holaaa bella muy bien y tuuu???", "clean": "@clariss39188207 hola bella muy bien y tu?"}
+{"noisy": "ver una peli y luego morirme de sueño fuando me tenga que poner a estudiar? decisiones duras...", "clean": "ver una película y luego morirme de sueño cuando me tenga que poner a estudiar? decisiones duras..."}
+{"noisy": "me voy al xaaanadu (:", "clean": "me voy al xanadú (:"}
+{"noisy": "@melycactus jajajaa que bien vivimos", "clean": "@melycactus ja que bien vivimos"}
+{"noisy": "primer baño del año @username los álamos http://t.co/pxl0c3zgf3", "clean": "primer baño del año @username los álamos http://t.co/pxl0c3zgf3"}
+{"noisy": "hola! new ! @username cayenablanca studio http://t.co/axfahcgx27", "clean": "hola! new ! @username cayenablanca studio http://t.co/axfahcgx27"}
+{"noisy": "@mcpompis jajaja queva queva no has visto que me a explotado el globo ?eso es que no me quiere", "clean": "@mcpompis jajaja qué_va qué_va no has visto que me a explotado el globo ?eso es que no me quiere"}
+{"noisy": "@mariarteaga90 gracias i ninia aver si t veo muaxh !!", "clean": "@mariarteaga90 gracias i niña aver si t veo mua !!"}
+{"noisy": "\"si robas, que sea un beso. si lloras, que sea de felicidad. si pierdes, que sea el miedo. si ganas, que sea un amigo.\"", "clean": "\"si robas, que sea un beso. si lloras, que sea de felicidad. si pierdes, que sea el miedo. si ganas, que sea un amigo.\""}
+{"noisy": "@evita_vallekas ajajajajajaa tu duerme duerme (;", "clean": "@evita_vallekas ja tu duerme duerme (;"}
+{"noisy": "@anadochay amoor , pode dar #rt nesse link ? https://t.co/7nuevlkb3o . te divulgo 3x :)) . obg !", "clean": "@anadochay amoor , pode dar #rt nesse link ? https://t.co/7nuevlkb3o . te divulgo 3x :)) . obg !"}
+{"noisy": "@nereapleon o de barro caliente", "clean": "@nereapleon o de barro caliente"}
+{"noisy": "@adrianacoleram mañana te llevo un artículo del periódico en el que venía. he supuesto que te podría interesar…", "clean": "@adrianacoleram mañana te llevo un artículo del periódico en el que venía. he supuesto que te podría interesar…"}
+{"noisy": "#tito es ahora una tendencia en #madrid http://t.co/lvso6nyayn", "clean": "#tito es ahora una tendencia en #madrid http://t.co/lvso6nyayn"}
+{"noisy": "a descansar wapita de face que hoy a sido un dia largo y mñana hay q levantarse cn las pilas recargadas :-) #teqm16 @inmagandul #tuereseso", "clean": "a descansar guapita de face que hoy a sido un dia largo y mañana hay q levantarse con las pilas recargadas :-) #teqm16 @inmagandul #tuereseso"}
+{"noisy": "quiero pasar calor, hartarme de tintito tira en el cesped .. quiero verano yaa !!!:) http://t.co/z4wmbmjigg", "clean": "quiero pasar calor, hartarme de tintito tira en el césped .. quiero verano ya !!!:) http://t.co/z4wmbmjigg"}
+{"noisy": "\"me trayó una ola del pacifico y llego un punto queeee la ola me trayó y pense ah! mi orechio jodido\"", "clean": "\"me tragó una ola del pacifico y llego un punto que la ola me tragó y pensé ah! mi orechio jodido\""}
+{"noisy": "por el #diamundialdelautismo esta noche el estadio mediterráneo tendrá una iluminación especialmente dedicado a ellos.", "clean": "por el #diamundialdelautismo esta noche el estadio mediterráneo tendrá una iluminación especialmente dedicado a ellos."}
+{"noisy": "aqui en musica que no ha venido la ticher -.-", "clean": "aquí en musica que no ha venido la ticher -.-"}
+{"noisy": "pufff ... me parece a miii q todo esta teniendo un color demasiado...oscuro ains !!!! kiero pùrpura !!!!!!", "clean": "puf ... me parece a mí q todo esta teniendo un color demasiado...oscuro ains !!!! quiero púrpura !!!!!!"}
+{"noisy": "cuidado con las palabras, son armas peligrosas que no necesitan licencia.", "clean": "cuidado con las palabras, son armas peligrosas que no necesitan licencia."}
+{"noisy": "ay jo, el insti :'3", "clean": "ay jo, el instituto :'3"}
+{"noisy": "desearle a mi @mariiluna8 que tenga un buen viaje de vuelta y que te voy a echar mucho de menos!! en unos meses te veo otra vez :)", "clean": "desearle a mi @mariiluna8 que tenga un buen viaje de vuelta y que te voy a echar mucho de menos!! en unos meses te veo otra vez :)"}
+{"noisy": "jamás podremos cambiar el mundo. pero si podremos comprendernos más.", "clean": "jamás podremos cambiar el mundo. pero si podremos comprendernos más."}
+{"noisy": "un poquito de ejercicios antes de cenar!! ;)", "clean": "un poquito de ejercicios antes de cenar!! ;)"}
+{"noisy": "juan carlos noooo :'( :'(", "clean": "juan carlos no :'( :'("}
+{"noisy": "@lorensh98 priiimito donde te vas?", "clean": "@lorensh98 primito donde te vas?"}
+{"noisy": "@alexelangel1 @ignasi_pr @jordipvermelles *te miro*como esta ignasi ?", "clean": "@alexelangel1 @ignasi_pr @jordipvermelles *te miro*como esta ignasi ?"}
+{"noisy": "@atsidirdam84 como me felicite mi idolo muero seguro.. jajaja que tonto eres.", "clean": "@atsidirdam84 como me felicite mi ídolo muero seguro.. jajaja que tonto eres."}
+{"noisy": "@manuelbn75 jajajaja abeeee cuando vienes conmigo un diita maricona", "clean": "@manuelbn75 jajajaja abe cuando vienes conmigo un diíta maricona"}
+{"noisy": "@mariacortes1997 eso es en todos los institutos?", "clean": "@mariacortes1997 eso es en todos los institutos?"}
+{"noisy": "no me merezco nada ahora mismo.. me arrepieento que flipas", "clean": "no me merezco nada ahora mismo.. me arrepiento que flipas"}
+{"noisy": "ultimamente me da.igual deeeee todo", "clean": "últimamente me da.igual de todo"}
+{"noisy": "si quieres ir a la moda en gafas no dudes en comprar unas @knockaround_sp ;) ;) !!", "clean": "si quieres ir a la moda en gafas no dudes en comprar unas @knockaround_sp ;) ;) !!"}
+{"noisy": "buuueno puuues llego laa roomeeriiia :)", "clean": "bueno pues llego la romería :)"}
+{"noisy": "no todas las arrugas se pueden hacer mariposas!?", "clean": "no todas las arrugas se pueden hacer mariposas"}
+{"noisy": "mas de una tenéis el síndrome de abeja que os creéis reinas y sois un simple bicho", "clean": "mas de una tenéis el síndrome de abeja que os creéis reinas y sois un simple bicho"}
+{"noisy": "@cpartyforever que estoy enfadada contigo!... yo tambien te quiero mucho y tu me haces muchisimo de sufrir!", "clean": "@cpartyforever que estoy enfadada contigo!... yo también te quiero mucho y tu me haces muchísimo de sufrir!"}
+{"noisy": "que hace tiempo que noto que ya me da igual que le regales tu boca a cualquier niña tonta perdida que quiera pillar", "clean": "que hace tiempo que noto que ya me da igual que le regales tu boca a cualquier niña tonta perdida que quiera pillar"}
+{"noisy": "@irenee_90 noo ? tendremos que empezar otraa juumpeee ..", "clean": "@irenee_90 no ? tendremos que empezar otra juumpeee .."}
+{"noisy": "indescriptible lo que le quiero y lo que me ayuda, mi niññño gracias por todo y felices 15;) @a3_garcia", "clean": "indescriptible lo que le quiero y lo que me ayuda, mi niño gracias por todo y felices 15;) @a3_garcia"}
+{"noisy": "y en breve otro ruleo con alguien aún más perro, @jonathanvara", "clean": "y en breve otro ruleo con alguien aún más perro, @jonathanvara"}
+{"noisy": "@ruben_milinko8 #malosvirus por tu cuerpo.... la lluvia no tiene pa culpa... #muchoalcohol", "clean": "@ruben_milinko8 #malosvirus por tu cuerpo.... la lluvia no tiene la culpa... #muchoalcohol"}
+{"noisy": "buen día de colegio, pero ojala llegase ya el maldito veranooooo y a tomar por saco todo.", "clean": "buen día de colegio, pero ojala llegase ya el maldito verano y a tomar por saco todo."}
+{"noisy": "@erre4mania no me digas...dime algo que no sepa jajaja", "clean": "@erre4mania no me digas...dime algo que no sepa jajaja"}
+{"noisy": "con la nueva revista de @canamo y sus dos semillas de cream mandarine y moham ram ! solo digo.. #fuckyeahhh", "clean": "con la nueva revista de @canamo y sus dos semillas de cream mandarine y moham ram ! solo digo.. #fuckyeahhh"}
+{"noisy": "que monas me han quedado las uñas jajajaj", "clean": "que monas me han quedado las uñas ja"}
+{"noisy": "ayayayayyay ya están aquí mis pulseritas de @patixula_abal jijiji", "clean": "ay ya están aquí mis pulseritas de @patixula_abal ji"}
+{"noisy": "2 de abril día del autismo, 1 apoyo a todas las familias k viven cada día con 1 miembro en sus familias #ánimo", "clean": "2 de abril día del autismo, 1 apoyo a todas las familias k viven cada día con 1 miembro en sus familias #ánimo"}
+{"noisy": "pues vuelta a la rutina diaria. volvemos a la facultad!!!", "clean": "pues vuelta a la rutina diaria. volvemos a la facultad!!!"}
+{"noisy": "si esque eres monísimo :')", "clean": "si es_que eres monísimo :')"}
+{"noisy": "@alvaroolopez25 estoy en ciu ... como no te lo envie por whatsapp jajaja", "clean": "@alvaroolopez25 estoy en ciu ... como no te lo envíe por whatsapp jajaja"}
+{"noisy": "a miii mundo lo único que le falta para ser perfecto eres tu!! #venyaaaa! :)", "clean": "a mi mundo lo único que le falta para ser perfecto eres tu!! #venya! :)"}
+{"noisy": "que alegria da salir a esta hora de la facultad y que sea de dia :))", "clean": "que alegría da salir a esta hora de la facultad y que sea de dia :))"}
+{"noisy": "yo no podría estar hoy en clase, me moriría", "clean": "yo no podría estar hoy en clase, me moriría"}
+{"noisy": "un diaaa perfectooo ...si sale todo lo q hoooooy me haaaaan propuesto...x finnnn nos podremosss reir d la vidaaa mi hijo y yoppp ...", "clean": "un día perfecto ...si sale todo lo q hoy me han propuesto...x fin nos podremos reir d la vida mi hijo y yo ..."}
+{"noisy": "se acabó lo que se dabaaaa. #twitteroooooff", "clean": "se acabó lo que se daba. #twitteroff"}
+{"noisy": "@angelillo20ney buenas nochess pequeñooo !! muacks !", "clean": "@angelillo20ney buenas noches pequeño !! mua !"}
+{"noisy": "los sueños son para los soñadores, la realidad para los valientes.", "clean": "los sueños son para los soñadores, la realidad para los valientes."}
+{"noisy": "esta que está aqui se va ya:-) #off.", "clean": "esta que está aquí se va ya:-) #off."}
+{"noisy": "@leyyperez9 que fuerte como se llamaba? jajajaja", "clean": "@leyyperez9 que fuerte como se llamaba? jajajaja"}
+{"noisy": "a pesar de todo siempre, para mi eres la mejor y teamo muchisimo !!", "clean": "a pesar de todo siempre, para mi eres la mejor y te_amo muchísimo !!"}
+{"noisy": "ha vuelto otra vez @acolitodllibra", "clean": "ha vuelto otra vez @acolitodllibra"}
+{"noisy": "los #periodistas que estén en #madrid el 11 de abril no se pierdan el @gvsp2013 organizado por los alumnos de #gabinetesucm en @ccinf_uuuucm", "clean": "los #periodistas que estén en #madrid el 11 de abril no se pierdan el @gvsp2013 organizado por los alumnos de #gabinetesucm en @ccinf_ucm"}
+{"noisy": "viendo #kickboxer coooon pedrin pedrete el pajarete!!", "clean": "viendo #kickboxer con pedrín pedrete el pajarete!!"}
+{"noisy": "venga.. gabrielaaa ... tu puedeees.. venga...", "clean": "venga.. gabriela ... tu puedes.. venga..."}
+{"noisy": "“petición de firmas para que metal gear solid v: the phantom pain llegue doblado al castellano” da para abrazo o no da para abrazo?", "clean": "“petición de firmas para que metal gear solid v: the phantom pain llegue doblado al castellano” da para abrazo o no da para abrazo?"}
+{"noisy": "@isabevi97 sageraaaá tu me superas d:& lt;", "clean": "@isabevi97 exagerada tu me superas d:& lt;"}
+{"noisy": "@meca_raulhotmai jajajajajajajjaaj kee echoo polvooooo", "clean": "@meca_raulhotmai ja qué hecho polvo"}
+{"noisy": "@oscarmartinez76 @pabloalboran @cadena100 no nos dejeis con la intriga! jajaaaaa queee ganas y que nervios!! :)", "clean": "@oscarmartinez76 @pabloalboran @cadena100 no nos dejéis con la intriga! jaja que ganas y que nervios!! :)"}
+{"noisy": "y luego la pica soy yo jajaja flipo .", "clean": "y luego la pica soy yo jajaja flipo ."}
+{"noisy": "una duxita y a la puta calle pero ya!", "clean": "una duchita y a la puta calle pero ya!"}
+{"noisy": "levantarse por la mañana y escuchar aires de triana no tiene precio :)", "clean": "levantarse por la mañana y escuchar aires de triana no tiene precio :)"}
+{"noisy": "@juanelcierrabar madre el sandungero jajajjaja", "clean": "@juanelcierrabar madre el sandunguero ja"}
+{"noisy": "entre broma y broma uno deeee los dos se enamoraaaaa.", "clean": "entre broma y broma uno de los dos se enamora."}
+{"noisy": "@mariajose_fefi he estado alli , no me habras visto...jajajajaja", "clean": "@mariajose_fefi he estado allí , no me habrás visto...jajajajaja"}
+{"noisy": "de marzo me quedo con ese pedazo de viaje a madrid y la visita de dos grandes a sevilla", "clean": "de marzo me quedo con ese pedazo de viaje a madrid y la visita de dos grandes a sevilla"}
+{"noisy": "con @javieralmazn en fyqqqq !! pppff me aburro", "clean": "con @javieralmazn en fin !! puf me aburro"}
+{"noisy": "pero me da pena borrarla de los planos, había quedado tan bonita :')", "clean": "pero me da pena borrarla de los planos, había quedado tan bonita :')"}
+{"noisy": "se acabo lo bueno. . .vuelta a la rutina :(", "clean": "se acabo lo bueno. . .vuelta a la rutina :("}
+{"noisy": "me voi .. no puedo mas..", "clean": "me voy .. no puedo mas.."}
+{"noisy": "@nereaparron23 a mi mee pareces perfecta tuu rubiaa :') asiquee ya sabes lo que tocaa hooy :) te quiero muchoo :)", "clean": "@nereaparron23 a mi mee pareces perfecta tú rubia :') así_que ya sabes lo que toca hoy :) te quiero mucho :)"}
+{"noisy": "bueenoo yoo me vooy a dormiir ke mañanaa me esperaa un largo diiia", "clean": "bueno yo me voy a dormir que mañana me espera un largo día"}
+{"noisy": "pues hoy si son muy buenas noches despues de una maravillosa conver con una gran persona , que siempre formara parte de vida @rosa4393 tq :)", "clean": "pues hoy si son muy buenas noches después de una maravillosa conversación con una gran persona , que siempre formara parte de vida @rosa4393 te_quiero :)"}
+{"noisy": "con mi gente en el recreo", "clean": "con mi gente en el recreo"}
+{"noisy": "@jona1412 te he inviyado aceptame", "clean": "@jona1412 te he invitado aceptame"}
+{"noisy": "es bonita y zorra a partes iguales.", "clean": "es bonita y zorra a partes iguales."}
+{"noisy": "@ismaelharotazi gracias ati me tube qe buscar la vida para ir al insti esta mñn .. 1 negativo para usted -.-", "clean": "@ismaelharotazi gracias a_ti me tuve que buscar la vida para ir al instituto esta mañana .. 1 negativo para usted -.-"}
+{"noisy": "olvida lo que te hizo daño en el pasado, pero jamás olvides lo que te enseñó.", "clean": "olvida lo que te hizo daño en el pasado, pero jamás olvides lo que te enseñó."}
+{"noisy": "@inmaculadafrut jajajaja siii noo laa hemos encendioo !!", "clean": "@inmaculadafrut jajajaja si no la hemos encendido !!"}
+{"noisy": "una tarde, tú y yo, viendo una peli , aquí... http://t.co/ywbxubv9aaaaf", "clean": "una tarde, tú y yo, viendo una película , aquí... http://t.co/ywbxubv9af"}
+{"noisy": "@marialarubia79 buenos dias princesa feliz dia que tengas u bonito dia como bonita tu eres un besazo enorme", "clean": "@marialarubia79 buenos dias princesa feliz dia que tengas u bonito dia como bonita tu eres un besazo enorme"}
+{"noisy": "seño ricardo no ira al cole esta semana. mañana ire para que le mandes trabajos para la semana, esta todavia malito con fiebre. un beso", "clean": "señor ricardo no ira al cole esta semana. mañana iré para que le mandes trabajos para la semana, esta todavía malito con fiebre. un beso"}
+{"noisy": "aleluya @sergio_gettin alfin se despierta!", "clean": "aleluya @sergio_gettin al_fin se despierta!"}
+{"noisy": "el gol queee te merecias por tu trabajo y empeño http://t.co/ixkofkmmnw", "clean": "el gol que te merecías por tu trabajo y empeño http://t.co/ixkofkmmnw"}
+{"noisy": "@blancam252 :o no vas a venir a mi cumple ? ok.", "clean": "@blancam252 :o no vas a venir a mi cumple ? ok."}
+{"noisy": "305 mensajes en unas horas.. menos mal que había dicho que iba a estar sin wpp ,q pesadosss", "clean": "305 mensajes en unas horas.. menos mal que había dicho que iba a estar sin whatsapp ,q pesados"}
+{"noisy": "dormí o no dormí, eza eh la cuehtion", "clean": "dormí o no dormí, esa eh la cuestión"}
+{"noisy": "\" amoss adri que son la unaaaaaaaaaaa \" jajajaj a", "clean": "\" vamos adri que son la una \" ja a"}
+{"noisy": "@danmanso91 jajajaj si si si!! esto esta preparao para q salga la #zorrasca en cuanto empiece el buen tiempo ya sabes que voy al puebli !", "clean": "@danmanso91 jajajaj si si si!! esto esta preparado para q salga la #zorrasca en cuanto empiece el buen tiempo ya sabes que voy al pueblo !"}
+{"noisy": "@97directioner_1 jajjajjajja dioa lo amo!!!! se me ha hecho muy corta :)", "clean": "@97directioner_1 ja dios lo amo!!!! se me ha hecho muy corta :)"}
+{"noisy": "que bolsa mas llena llevamos ya de corujas", "clean": "que bolsa mas llena llevamos ya de corujas"}
+{"noisy": "hoy no puedo decir buenos días, me va a caducar el whatsapp .", "clean": "hoy no puedo decir buenos días, me va a caducar el whatsapp ."}
+{"noisy": "@sofiamcr tenemos la misma opinión, ya te digo que el resto igual... es indignante", "clean": "@sofiamcr tenemos la misma opinión, ya te digo que el resto igual... es indignante"}
+{"noisy": "#lavidaesmásfácilcuando él esta a mi lado.", "clean": "#lavidaesmásfácilcuando él esta a mi lado."}
+{"noisy": "os dejo con vuestros temillas esos raros. hasta mañana", "clean": "os dejo con vuestros temillas esos raros. hasta mañana"}
+{"noisy": "@abelpintos si se sintio a la distancia yo te kiero curar esa garganta\"\"", "clean": "@abelpintos si se sintió a la distancia yo te quiero curar esa garganta\"\""}
+{"noisy": "buenaaaaaas ncheees !! relaax de cuerpo y mente en marcha!! #twitteroff", "clean": "buenas noches !! relax de cuerpo y mente en marcha!! #twitteroff"}
+{"noisy": "me e dado cuenta que la gente.que realmente la e importado y se que nunca me.va a fallaaar.y cumplir lo que dicen son los de peñalsordo !!", "clean": "me e dado cuenta que la gente.que realmente la e importado y se que nunca me.va a fallar.y cumplir lo que dicen son los de peñalsordo !!"}
+{"noisy": "'es como intentar hacerlos entender que dios no existe, llevan años de ventaja en sus mentiras y eso es triste'", "clean": "'es como intentar hacerlos entender que dios no existe, llevan años de ventaja en sus mentiras y eso es triste'"}
+{"noisy": "voy a acabar con los problemas voy a matar al profesor de matematicas .", "clean": "voy a acabar con los problemas voy a matar al profesor de matemáticas ."}
+{"noisy": "pos una horita de clases y a miriendar con mi bebi @claudiatero :)!", "clean": "pues una horita de clases y a merendar con mi bebi @claudiatero :)!"}
+{"noisy": "@myriamswanbwoy io sí q t kiero tkmmmmmmm", "clean": "@myriamswanbwoy yo sí q t quiero te_quiero_mucho"}
+{"noisy": "@abichuelascala no me lo digas dos veces k me voy!! xk esto no puede segir asi!", "clean": "@abichuelascala no me lo digas dos veces k me voy!! porque esto no puede seguir asi!"}
+{"noisy": "resiien comiita y artica de. to de come anca mii.gordii@sandra toloc !!", "clean": "recién comidita y hartica de. todo de come anca mii.gordii@sandra toloc !!"}
+{"noisy": "otro abrazo para ti @crm_huelva. nos vemos pronto!", "clean": "otro abrazo para ti @crm_huelva. nos vemos pronto!"}
+{"noisy": "bueno, esta tarde tiene su recompensa :)))", "clean": "bueno, esta tarde tiene su recompensa :)))"}
+{"noisy": "a hacer faena y una duchita ! #twitteroff", "clean": "a hacer faena y una duchita ! #twitteroff"}
+{"noisy": "puto ruedas que salidos jajajajaj", "clean": "puto ruedas que salidos ja"}
+{"noisy": "@wifito_tuitero @siemprefiel999 @kenia_ds jajaja xd casi se me va el dedo y le digo a daralika que me llame chochete", "clean": "@wifito_tuitero @siemprefiel999 @kenia_ds jajaja xd casi se me va el dedo y le digo a daralika que me llame chochete"}
+{"noisy": "sevilla entera bonita de triana a san pablo y asta mi giralda yo la quiero ver..8'", "clean": "sevilla entera bonita de triana a san pablo y asta mi giralda yo la quiero ver..8'"}
+{"noisy": "@merypepinilla anda maria pa q veas lo q te aprecio:)) jajaja", "clean": "@merypepinilla anda maría para q veas lo q te aprecio:)) jajaja"}
+{"noisy": "me estoy convirtiendo en una tia sin sentimientos.", "clean": "me estoy convirtiendo en una tía sin sentimientos."}
+{"noisy": "ella deeeee las pastillas remix ? fraaak", "clean": "ella de las pastillas remix ? frak"}
+{"noisy": "hoy en clase de derecho concursal del master de la abogacía analizando el concurso de acreedores. [ pic ]: http://t.co/boy7g6u4ls", "clean": "hoy en clase de derecho concursal del master de la abogacía analizando el concurso de acreedores. [ pic ]: http://t.co/boy7g6u4ls"}
+{"noisy": "@mariinuxis o. o venga ya!! jajajajajajjajajaja", "clean": "@mariinuxis o. o venga ya!! ja"}
+{"noisy": "@florsterialason bienvenidos aaa nuestro twitter !", "clean": "@florsterialason bienvenidos a nuestro twitter !"}
+{"noisy": "si mi mami me.hace estos desayunos da gusto quedarse malita en casa", "clean": "si mi mamá me.hace estos desayunos da gusto quedarse malita en casa"}
+{"noisy": "que pesadaaa la madre coñoo !!! #gh8", "clean": "que pesada la madre coño !!! #gh8"}
+{"noisy": "ea pues @_pablocrespo me ha echo llorar! echaba de menos esos mensajes tuyos sin venir a cuento. te quiero! :)", "clean": "ea pues @_pablocrespo me ha echo llorar! echaba de menos esos mensajes tuyos sin venir a cuento. te quiero! :)"}
+{"noisy": "semanaaaaa santaa tuuuuu sigue pasandoo facturaaa ....q bien mee caess !", "clean": "semana santa tú sigue pasando factura ....q bien mee caes !"}
+{"noisy": "algunos madrugando para irse de fiesta.. y nosotras asimilando que estamos ya en madrid .,, bueno días niña! @raquelmc32", "clean": "algunos madrugando para irse de fiesta.. y nosotras asimilando que estamos ya en madrid .,, bueno días niña! @raquelmc32"}
+{"noisy": "@pau_hdezt tu dejaste de buscar porqe ya eres una mujer casada jajajajaja", "clean": "@pau_hdezt tu dejaste de buscar porque ya eres una mujer casada jajajajaja"}
+{"noisy": "como odio escribir a estas horas a alguien y me ponga 1 de abril y lo primero q pienso es..mierdaaa mañana colee", "clean": "como odio escribir a estas horas a alguien y me ponga 1 de abril y lo primero q pienso es..mierda mañana colee"}
+{"noisy": "tarde política con #fernando xd", "clean": "tarde política con #fernando xd"}
+{"noisy": "un 33% de los trending topics del sábado 30 en españa fueron hashtags : http://t.co/ca0mxq5fcw", "clean": "un 33% de los trending topics del sábado 30 en españa fueron hashtags : http://t.co/ca0mxq5fcw"}
+{"noisy": "pero qué guapo han puesto hoy aaa miguel! le sienta bien la siestaaaaa ☺ @trisulloa @granreserva_tve", "clean": "pero qué guapo han puesto hoy a miguel! le sienta bien la siesta ☺ @trisulloa @granreserva_tve"}
+{"noisy": "podré perder la batalla, pero nunca la guerra. still .!?", "clean": "podré perder la batalla, pero nunca la guerra. still ."}
+{"noisy": "buenos dias!!! amos aver keeeee hacemos jaja xd", "clean": "buenos dias!!! amos aver qué hacemos jaja xd"}
+{"noisy": "buenos dias.que asco de dia los lunes son malisimos", "clean": "buenos dias.que asco de dia los lunes son malísimos"}
+{"noisy": "@paulaglezmorato @minervarol jaja tu amiga.me a dixo se.lo tengo k subir .... tu baaaajaa ... jajajj", "clean": "@paulaglezmorato @minervarol jaja tu amiga.me a dicho se.lo tengo k subir .... tu baja ... ja"}
+{"noisy": "acabo de entrar en el selecto club de jugadores de primera división en \"temporadas\" en el fifa13 de xbox360.", "clean": "acabo de entrar en el selecto club de jugadores de primera división en \"temporadas\" en el fifa13 de xbox360."}
+{"noisy": "@javicamujavier cuuxamee sii peroo veen yaa eeeeeem", "clean": "@javicamujavier escúchame sí pero ven ya eh"}
+{"noisy": "@fraskoabla @maitetresvillas me llevo a la lola pa almeria a cenar esta noche. @username marideblasico http://t.co/zsp5gxz21g", "clean": "@fraskoabla @maitetresvillas me llevo a la lola para almería a cenar esta noche. @username mari_de_blasico http://t.co/zsp5gxz21g"}
+{"noisy": "buenos dias! calor, verano, sol, veeeeeeeen joddeeeer ! #gafasdesol #camisetassinmangas #oakley", "clean": "buenos dias! calor, verano, sol, ven joder ! #gafasdesol #camisetassinmangas #oakley"}
+{"noisy": "@mariomaldonad10 @alvarosanchezl4 @marikiya230911 @patriciamf19 me kiero ir otra vez jajaj", "clean": "@mariomaldonad10 @alvarosanchezl4 @marikiya230911 @patriciamf19 me quiero ir otra vez ja"}
+{"noisy": "piazon se queda fuera? por qué? no lo entiendo...", "clean": "piazón se queda fuera? por qué? no lo entiendo..."}
+{"noisy": "ofertas liberar iphone oficial de movistar por 5 euros rt pliiiis mas info en openmovil.imei@gmail.com http://t.co/eeeeh4gslk2f3", "clean": "ofertas liberar iphone oficial de movistar por 5 euros rt plis mas información en openmovil.imei@gmail.com http://t.co/eh4gslk2f3"}
+{"noisy": "cafe + 1/2 tostada 1,60 € http://t.co/imkour57q4", "clean": "café + 1/2 tostada 1,60 € http://t.co/imkour57q4"}
+{"noisy": "@gj_nury esperoooo que no se me note mucho mas jaja:). eres increíble.", "clean": "@gj_nury espero que no se me note mucho mas jaja:). eres increíble."}
+{"noisy": "jajaja ay dios, cada uno me recomendáis a uno para mi trabajo jajajaja la cosa es que shm al ser tres...a lo mejor me sube más la nota jaja", "clean": "jajaja ay dios, cada uno me recomendáis a uno para mi trabajo jajajaja la cosa es que shm al ser tres...a lo mejor me sube más la nota jaja"}
+{"noisy": "@charlyappletree afeitate ya!!! que ya va siendo hora...jajaja", "clean": "@charlyappletree afeitate ya!!! que ya va siendo hora...jajaja"}
+{"noisy": "@miguelangeldaza vale!! westfallenstadion , comúnmente conocido como signal iduna park , por temas de publicidad y eso. :)", "clean": "@miguelangeldaza vale!! westfallenstadion , comúnmente conocido como signal iduna park , por temas de publicidad y eso. :)"}
+{"noisy": "como se nota que es el ultimo dia y que estais todos dormidos aprovechando.... despertaos #meaburro", "clean": "como se nota que es el ultimo dia y que estáis todos dormidos aprovechando.... despertaos #meaburro"}
+{"noisy": "que mañana es mi cumpleee", "clean": "que mañana es mi cumpleaños"}
+{"noisy": "en serio no paro de pensar en la palabra ratópodo por culpa de @marinalozano13 y encima me rio sola #locaparezcoportuculpa", "clean": "en serio no paro de pensar en la palabra ratópodo por culpa de @marinalozano13 y encima me río sola #locaparezcoportuculpa"}
+{"noisy": "voy a coger y no me vais a encontrar mas vaya", "clean": "voy a coger y no me vais a encontrar mas vaya"}
+{"noisy": "@neejl creo q te has saltado la primavera... jajaja", "clean": "@neejl creo q te has saltado la primavera... jajaja"}
+{"noisy": "http://t.co/tq6lbuud8j con los terroristahhh jajajajaja", "clean": "http://t.co/tq6lbuud8j con los terroristas jajajajaja"}
+{"noisy": "ruth ( la hermana de liam ) esta en el concierto de los chicos :)", "clean": "ruth ( la hermana de liam ) esta en el concierto de los chicos :)"}
+{"noisy": "sabéis que? que quiero muchísimo a @caarlostorres92 :')", "clean": "sabéis que? que quiero muchísimo a @caarlostorres92 :')"}
+{"noisy": "le deseo mucha suerte a mi chica @anaparra97 que seguro que se le da muy bien! te quiero cieloo :)", "clean": "le deseo mucha suerte a mi chica @anaparra97 que seguro que se le da muy bien! te quiero cielo :)"}
+{"noisy": "@sitevasnovuelv1 @miriam_180811 me estáis petando el twitaaaah", "clean": "@sitevasnovuelv1 @miriam_180811 me estáis petando el twitter"}
+{"noisy": "@josequeroq @franjimenezsan nunca se olvida el.banco q por debajo metias el gol,la pared q te devolvia la pelota d tenis lasombradelolivo", "clean": "@josequeroq @franjimenezsan nunca se olvida el.banco q por debajo metías el gol,la pared q te devolvía la pelota d tenis la_sombra_del_olivo"}
+{"noisy": "empezamos bien la vuelta de vacaciones, sin agua caliente!!!", "clean": "empezamos bien la vuelta de vacaciones, sin agua caliente!!!"}
+{"noisy": "joder mis vecinos estan peleando pero chillio limpio dioss y son hermanos con parado con justin y sus hermanos xd", "clean": "joder mis vecinos están peleando pero chillido limpio dios y son hermanos con parado con justin y sus hermanos xd"}
+{"noisy": "amo esos abrazos en los que sin querer se te cierran los ojos.", "clean": "amo esos abrazos en los que sin querer se te cierran los ojos."}
+{"noisy": "@ruben_minuesa jajaja si tu looooo dicees", "clean": "@ruben_minuesa jajaja si tu lo dices"}
+{"noisy": "queeeee siesta me voy a homenajear.", "clean": "que siesta me voy a homenajear."}
+{"noisy": "despues de una tarde de ejercicio, una burna fruta para agarrar energias http://t.co/sgwvhi2rzn", "clean": "después de una tarde de ejercicio, una buena fruta para agarrar energías http://t.co/sgwvhi2rzn"}
+{"noisy": "afuu looo que se lee pooor aquii ... jajajaja", "clean": "afuu lo que se lee por aquí ... jajajaja"}
+{"noisy": "¿pero por que a mi?", "clean": "¿pero por que a mi?"}
+{"noisy": "@mario_gti loquiii mñna me acoplo a ti jaja para el #gym jejejjej xd xd", "clean": "@mario_gti loquita mañana me acoplo a ti jaja para el #gym je xd xd"}
+{"noisy": "hoy me acabo death note =) #llegoasufín", "clean": "hoy me acabo death note =) #llegoasufín"}
+{"noisy": "impresionante final de temporada de the walking dead .una obra maestra.para mi el mejor capitulo de las tres temporadas", "clean": "impresionante final de temporada de the walking dead .una obra maestra.para mi el mejor capitulo de las tres temporadas"}
+{"noisy": "@g_hermano_ @susanistaa entonces según tu..el esta enamorado de susana n??porque yo le veo muchísimo cuento..!", "clean": "@g_hermano_ @susanistaa entonces según tu..el esta enamorado de susana n??porque yo le veo muchísimo cuento..!"}
+{"noisy": "@lauragh12 @mariasanchezzgh y la criticais cuando tneis mcho en cmun cn ella, la myoria de los #wallistas hems sido lauristas o/y maristas!", "clean": "@lauragh12 @mariasanchezzgh y la criticáis cuando tenéis mucho en común con ella, la mayoría de los #wallistas hemos sido lauristas o/y maristas!"}
+{"noisy": "@anitamarcanooo ya lo se bonitaaa jajajaja", "clean": "@anitamarcano ya lo se bonita jajajaja"}
+{"noisy": "en eso no estoi deacuerdo", "clean": "en eso no estoy de_acuerdo"}
+{"noisy": "@lydicastillo igual nos encontramos x el bus xd", "clean": "@lydicastillo igual nos encontramos x el bus xd"}
+{"noisy": "apesar de todo saber que tengo a personas hay que me ayudan y se preocupan hacen que todo lo malo se perdone!", "clean": "apesar de todo saber que tengo a personas hay que me ayudan y se preocupan hacen que todo lo malo se perdone!"}
+{"noisy": "@t5granhermano a míriam . igor es mi empalmado, y los gemelos me caen bien y son de mi tierra. así que expulsaría a míriam .", "clean": "@t5granhermano a míriam . igor es mi empalmado, y los gemelos me caen bien y son de mi tierra. así que expulsaría a míriam ."}
+{"noisy": "madre mia eso es un colegio o un yo te jode y tu me jodes ?", "clean": "madre mía eso es un colegio o un yo te jode y tu me jodes ?"}
+{"noisy": "@alyalicia_ y tu putaaa.. tss", "clean": "@alyalicia_ y tu puta.. chis"}
+{"noisy": "tío, me petan el tl solo doooos usuarios colega, vayaaaaa vicio.. xd", "clean": "tío, me petan el tl solo dos usuarios colega, vaya vicio.. xd"}
+{"noisy": "\" you can count on me like 1 2 3... i'll be there ...\" buenas noches a tod@s ...dulces sueños o hermosas pesadillas!!!!!!! :)!!", "clean": "\" you can count on me like 1 2 3... i'll be there ...\" buenas noches a todos_y_todas ...dulces sueños o hermosas pesadillas!!!!!!! :)"}
+{"noisy": "como aprovechas 1~ tk @birectioner4e @jose_barrosoooo16 :-)", "clean": "como aprovechas 1~ tk @birectioner4e @jose_barroso16 :-)"}
+{"noisy": "como cuestaa volver ala normalidad dspues d esta semana santa poco cofrade...lo unico que me alegra es mi betis estaa nochee con @jgarciaber", "clean": "como cuesta volver ala normalidad después d esta semana santa poco cofrade...lo único que me alegra es mi betis esta noche con @jgarciaber"}
+{"noisy": "@blasauryn a mii tambiien me gustaria muchoo quee tu algun dia me siguieras ... lo veo imposible pero bueno jajaja", "clean": "@blasauryn a mí también me gustaría mucho que tu algún dia me siguieras ... lo veo imposible pero bueno jajaja"}
+{"noisy": "@robolesbian hacemos chistes sobre guerras entre paises tu crees que no podemos hacer chistes sobre los \"\"\"\"sentimientos\"\"\"\"\"?", "clean": "@robolesbian hacemos chistes sobre guerras entre países tu crees que no podemos hacer chistes sobre los \"\"\"\"sentimientos\"\"\"\"\"?"}
+{"noisy": "a miriam solo le falta decir. estoy llorando xq me tengo que casar con el!! #ghdirecto", "clean": "a míriam solo le falta decir. estoy llorando porque me tengo que casar con el!! #ghdirecto"}
+{"noisy": "y creo que muero si no siento el roce de tu cuerpoooo junto a mi!!!! #platero", "clean": "y creo que muero si no siento el roce de tu cuerpo junto a mi!!!! #platero"}
+{"noisy": "pues en el 2 ya :) a clases se ha dicho.. dsd luego no tengo cuerpo.. en modo #zombi jaaja #bn", "clean": "pues en el 2 ya :) a clases se ha dicho.. desde luego no tengo cuerpo.. en modo #zombi ja #bn"}
+{"noisy": "pues buena peli diamante de sangre !!!", "clean": "pues buena película diamante de sangre !!"}
+{"noisy": "estamos preparando algo muy gordo para el 5 de abril, y ese mes va a dar mucho que hablar. 600 744 924 listas", "clean": "estamos preparando algo muy gordo para el 5 de abril, y ese mes va a dar mucho que hablar. 600 744 924 listas"}
+{"noisy": "@warwithg pero... si vivo en vigo ... snif .", "clean": "@warwithg pero... si vivo en vigo ... snif ."}
+{"noisy": "ojala pudiera dormir asi todas las noches :) muack l #buenasnoches", "clean": "ojala pudiera dormir asi todas las noches :) mua l #buenasnoches"}
+{"noisy": "@cortacablerojo cada semana más grandes!!!!! yeahhhhhh http://t.co/vynqzbjwsx", "clean": "@cortacablerojo cada semana más grandes!!!!! yeahhhhhh http://t.co/vynqzbjwsx"}
+{"noisy": "jooo con lo bien que me caía a mí juancar .. #gh8", "clean": "jo con lo bien que me caía a mí juancar .. #gh8"}
+{"noisy": "pues dormir k mañana curro", "clean": "pues dormir k mañana curro"}
+{"noisy": "muerto de sueño en el gimnasio", "clean": "muerto de sueño en el gimnasio"}
+{"noisy": "@ikuste que me gustaaaa la canción. xd", "clean": "@ikuste que me gusta la canción. xd"}
+{"noisy": "“@sitabilis: levanta la cabeza princesa que se te nota la papada.” @danaemorillo", "clean": "“@sitabilis: levanta la cabeza princesa que se te nota la papada.” @danaemorillo"}
+{"noisy": "maldito abril, solo viene a recordarte que ya no eres feliz.", "clean": "maldito abril, solo viene a recordarte que ya no eres feliz."}
+{"noisy": "muchisimas felicidades feeaaaaa :p pasalo en grande!!que no se cumpleeeeen 18 todos los dias :) espero que me invites a algo eh!!! jaja @95maria12", "clean": "muchísimas felicidades fea :p pasalo en grande!!que no se cumplen 18 todos los dias :) espero que me invites a algo eh!!! jaja @95maria12"}
+{"noisy": "pues aqi la menda se va a apretar un colacaito con bizcochos de la abu q estan tremendamente ricos!! #vayaqesi", "clean": "pues aquí la menda se va a apretar un colacaíto con bizcochos de la abu q están tremendamente ricos!! #vayaqesi"}
+{"noisy": "'guasa', ' triceps ' y ' borja ' es ahora una tendencia en #seville http://t.co/markkxb7jx", "clean": "'guasa', ' tríceps ' y ' borja ' es ahora una tendencia en #seville http://t.co/markkxb7jx"}
+{"noisy": "jajajaa tía @inesparis_13 , ahora te digo un secreto por whatsapp ,verás que casualidad. pd : no digo lo de las compras baby ,digo sábado jeje.", "clean": "ja tía @inesparis_13 , ahora te digo un secreto por whatsapp ,verás que casualidad. p.d. : no digo lo de las compras baby ,digo sábado jeje."}
+{"noisy": "y hoy darle la enhorabuena a @danicampuzanom jaja pedazo de tio vas a ser... a cuidarle mucho eh me alegro mucho un besazo", "clean": "y hoy darle la enhorabuena a @danicampuzanom jaja pedazo de tío vas a ser... a cuidarle mucho eh me alegro mucho un besazo"}
+{"noisy": "viendo fotos de hace unos años :') qué tiempos aquellos", "clean": "viendo fotos de hace unos años :') qué tiempos aquellos"}
+{"noisy": "@blancawouh_98 jajajajajajaja noo :( tu q ase cosaaa guapa?:)", "clean": "@blancawouh_98 jajajajajajaja no :( tu q ase cosa guapa?:)"}
+{"noisy": "@amadoratm jajajajajjaja pf ...yo me despertare biiien que a primera tengo educacion fisica : sss jajaja", "clean": "@amadoratm ja puf ...yo me despertare bien que a primera tengo educación física : sss jajaja"}
+{"noisy": "uuun día me harán una analítica para poder embarcar, absurdo.", "clean": "un día me harán una analítica para poder embarcar, absurdo."}
+{"noisy": "salir de la facultad y que sea de dia es otro rollo", "clean": "salir de la facultad y que sea de dia es otro rollo"}
+{"noisy": "@5eva1 ya las dichoo tuu noo ?? buenoo .... jejejejeje", "clean": "@5eva1 ya las dicho tú no ?? bueno .... jejejejeje"}
+{"noisy": "@anacg27 el mas mejor jajjajajaaj puta ana", "clean": "@anacg27 el mas mejor ja puta ana"}
+{"noisy": "@myriamastorga @paulitaglvez entonces como lo sabes jajajajaajajaja", "clean": "@myriamastorga @paulitaglvez entonces como lo sabes ja"}
+{"noisy": "después de veeer @gh14telecinco me voy a la camita q yaaaaa es hora. buenas noches #twitteroff :)", "clean": "después de ver @gh14telecinco me voy a la camita q ya es hora. buenas noches #twitteroff :)"}
+{"noisy": "@costalcofrade aquí??? o el tuenti ?", "clean": "@costalcofrade aquí??? o el tuenti ?"}
+{"noisy": "gira española de @manuchao en mayo http://t.co/2detpt15uz ourense , l'hospitalet y rivas vaciamadrid", "clean": "gira española de @manuchao en mayo http://t.co/2detpt15uz ourense , l'hospitalet y rivas vaciamadrid"}
+{"noisy": "@19lillo @sandrasand29 pa mi tu cola!!! jajajajajajajajajajajajajajaja", "clean": "@19lillo @sandrasand29 para mi tu cola!!! jajajajajajajajajajajajajajaja"}
+{"noisy": "@lymonynada posiblemente no llege a tiempo para este finde pero lo voy a intentar. nos tienes ganas o q?jajaja", "clean": "@lymonynada posiblemente no llegue a tiempo para este fin_de_semana pero lo voy a intentar. nos tienes ganas o q?jajaja"}
+{"noisy": "@lostislamichist as did isabel and ferdinand in #granada #andalucia #espana", "clean": "@lostislamichist as did isabella and ferdinand in #granada #andalucia #espana"}
+{"noisy": "que os follen mucho mucho el culete a los que no madrugueis mañana, que yo tengo examen de francés. to la suerte pa ' mi. nanit .", "clean": "que os follen mucho mucho el culete a los que no madruguéis mañana, que yo tengo examen de francés. toda la suerte para ' mi. nanit ."}
+{"noisy": "mañana me han dicho que habrá una orda de zombies en la escuela de arte no?", "clean": "mañana me han dicho que habrá una horda de zombis en la escuela de arte no?"}
+{"noisy": "y mañana veo a las tontas de @paola_rojas22 @saragarcia7_ y @nereanmg :)", "clean": "y mañana veo a las tontas de @paola_rojas22 @saragarcia7_ y @nereanmg :)"}
+{"noisy": "@ade1984 @silvia_roman @silvi_ortega @meririzos @myrijerez @myriamdetroya la silvita esta muy perdidita la pobre mia ...jeje", "clean": "@ade1984 @silvia_roman @silvi_ortega @meririzos @myrijerez @myriamdetroya la silvita esta muy perdidita la pobre mía ...jeje"}
+{"noisy": "buenos días desde mi camita.", "clean": "buenos días desde mi camita."}
+{"noisy": "primera hora libre. dios, lo necesitaba..", "clean": "primera hora libre. dios, lo necesitaba.."}
+{"noisy": "ahora tengo un felino que nombre quieres que le ponga? @laurarivsob", "clean": "ahora tengo un felino que nombre quieres que le ponga? @laurarivsob"}
+{"noisy": "con las locas @isainvernon @patriciia_nieto", "clean": "con las locas @isainvernon @patriciia_nieto"}
+{"noisy": "@guijo_gomez jajajajajes si esque te quiero mas #sinellanada :)) tequieroo", "clean": "@guijo_gomez ja si es_que te quiero mas #sinellanada :)) te_quiero"}
+{"noisy": "@genko jajajaja debe ser eso :d", "clean": "@genko jajajaja debe ser eso :d"}
+{"noisy": "después de 7 horas y media de viaje y estar ahora 4 horas hablando por móvil me voy a dormir que mañana será un buen día, buenas noches. #j??", "clean": "después de 7 horas y media de viaje y estar ahora 4 horas hablando por móvil me voy a dormir que mañana será un buen día, buenas noches. #j"}
+{"noisy": "meterte la mano en el bolsillo y encontrarte 5€ es empezar bien el día!", "clean": "meterte la mano en el bolsillo y encontrarte 5€ es empezar bien el día!"}
+{"noisy": "me ha encantodo todos los \"pues si\"con los que me ha despertado mi @jose_rojasoliva ya estoy contenta todo el dia", "clean": "me ha encantado todos los \"pues si\"con los que me ha despertado mi @jose_rojasoliva ya estoy contenta todo el dia"}
+{"noisy": "voy a poner mi twitter un poco mas porno :$", "clean": "voy a poner mi twitter un poco mas porno :$"}
+{"noisy": "@drunkeado @itsbiebercody @muyayo__ @marinadiaz_98 no.", "clean": "@drunkeado @itsbiebercody @muyayo__ @marinadiaz_98 no."}
+{"noisy": "@232cristian pues nose que decirte... porqueeeee encima mi cerebro juega con el corazon a su antojo...", "clean": "@232cristian pues no_sé que decirte... porque encima mi cerebro juega con el corazón a su antojo..."}
+{"noisy": "creo que no tardare en irme", "clean": "creo que no tardare en irme"}
+{"noisy": "me piro a dormir, nas noches!", "clean": "me piro a dormir, buenas noches!"}
+{"noisy": "el cafe que quiero en mis mañanas es el de tus ojos.", "clean": "el café que quiero en mis mañanas es el de tus ojos."}
+{"noisy": "si es que tenia yo razon pasando x la isla estaba el desvio para zaragoza jajajaja @lidiamardel @dolc_eviita ♥♥♥ http://t.co/cvnx8j4qse", "clean": "si es que tenia yo razón pasando x la isla estaba el desvio para zaragoza jajajaja @lidiamardel @dolc_eviita ♥♥♥ http://t.co/cvnx8j4qse"}
+{"noisy": "@isaacue jajajaja ok, ok! es que estamos siempre muy atentos a todo xd", "clean": "@isaacue jajajaja ok, ok! es que estamos siempre muy atentos a todo xd"}
+{"noisy": "susargistas !!! a las 18:00 gran lluvia de votos!! tenemos q sacar a los gemelos de la casa!! nosotros tenemos el poder!! gh gemelos 27450 rt", "clean": "susargistas !!! a las 18:00 gran lluvia de votos!! tenemos q sacar a los gemelos de la casa!! nosotros tenemos el poder!! gh gemelos 27450 rt"}
+{"noisy": "que dia mas largo!! por fin me voy a dormir, #twitteroff", "clean": "que dia mas largo!! por fin me voy a dormir, #twitteroff"}
+{"noisy": "y de nuevo vuelta a la poco agradable rutina de correr todas la mañanas, aún así buenos días ;)", "clean": "y de nuevo vuelta a la poco agradable rutina de correr todas la mañanas, aún así buenos días ;)"}
+{"noisy": "he de reconocer que ha veces el twitter me da ansia...", "clean": "he de reconocer que ha veces el twitter me da ansia..."}
+{"noisy": "@aroiitaaaa aajajajajajajajaj aiiiii las mejores visitas las de mi inflaaa joeee !! #quetequieroooyoatiiiiicabesa!!", "clean": "@aroiitaaaa ja ay las mejores visitas las de mi inflada joder !! #quetequieroooyoatiiiiicabesa!!"}
+{"noisy": "@dbloodflowers *vuelve a mirar su entrepierna* lo siento pero yo solo veo almeja", "clean": "@dbloodflowers *vuelve a mirar su entrepierna* lo siento pero yo solo veo almeja"}
+{"noisy": "@cazaescorias d miiii ? perdona pero no sé d q m hablas mira por aquí ni m hables o por mensajeeees o por tuenti pero no m lies", "clean": "@cazaescorias d mí ? perdona pero no sé d q m hablas mira por aquí ni m hables o por mensajes o por tuenti pero no m líes"}
+{"noisy": "@anaamilo ola k ase k no duerme", "clean": "@anaamilo ola k ase k no duerme"}
+{"noisy": "noches de ron, coca cola y vatios", "clean": "noches de ron, coca cola y vatios"}
+{"noisy": "te estas quedando sola y ahora te das cuenta que lo has hecho mal y vienes pidiendo perdon ?, para mi jamas volveras a ser la misma.", "clean": "te estas quedando sola y ahora te das cuenta que lo has hecho mal y vienes pidiendo perdón ?, para mi jamas volverás a ser la misma."}
+{"noisy": "@manoloc13 mira los vídeos que he retuiteao y fliparás ... :s", "clean": "@manoloc13 mira los vídeos que he retuiteado y fliparás ... :s"}
+{"noisy": "siempre tiene que pasar algo..", "clean": "siempre tiene que pasar algo.."}
+{"noisy": "@officialcritika a todas las dreamer's #unmesdreamerscys y por supuesto a ti y a @officialsaik :)", "clean": "@officialcritika a todas las dreamer's #unmesdreamerscys y por supuesto a ti y a @officialsaik :)"}
+{"noisy": "@anngeleescastro graciias grandullonaa ...... jajajajajaj claroo q te invitooo .. y tuu pagaaaaas vale?? jajajaj tee quierooo graciias !!", "clean": "@anngeleescastro gracias grandullona ...... ja claro q te invito .. y tú pagas vale?? ja te quiero gracias !!"}
+{"noisy": "'cuanto mas grande la cigala, más feliz era yo. mi familia me daba las patas, porque me encantaban!' by @missadrianaabad", "clean": "'cuanto mas grande la cigala, más feliz era yo. mi familia me daba las patas, porque me encantaban!' by @missadrianaabad"}
+{"noisy": "hay días que es mejor no hablar con nadie.", "clean": "hay días que es mejor no hablar con nadie."}
+{"noisy": "no juzgues un libro por su portada, te puedes equivocar y muy feo!!", "clean": "no juzgues un libro por su portada, te puedes equivocar y muy feo"}
+{"noisy": "@ainoa_gb pero eso es porque ya te he dicho q tu tiras pa arriba y yo pa abajo .", "clean": "@ainoa_gb pero eso es porque ya te he dicho q tu tiras para arriba y yo para abajo ."}
+{"noisy": "@grayovictor no hay q darle mas caña al suceso d los panaderos lo mejor es pasar y dejarlo como anecdota ,ya q eran momentos de incertidumbre!!", "clean": "@grayovictor no hay q darle mas caña al suceso d los panaderos lo mejor es pasar y dejarlo como anécdota ,ya q eran momentos de incertidumbre"}
+{"noisy": "te cambio un si por ese ya no puedo", "clean": "te cambio un si por ese ya no puedo"}
+{"noisy": "quien viste a mercedes mila ? #elcuponerodelapuertadelchare :) cateta.es", "clean": "quien viste a mercedes milá ? #elcuponerodelapuertadelchare :) cateta.es"}
+{"noisy": "ojalá todo el mundo se de cuenta de como eres en realidad.", "clean": "ojalá todo el mundo se de cuenta de como eres en realidad."}
+{"noisy": "esto de tener pavo es muy sacrificado, hay que controlarse mucho qe si nooooo en medio de clase te levantas y haces el gilipollas :d", "clean": "esto de tener pavo es muy sacrificado, hay que controlarse mucho que si no en medio de clase te levantas y haces el gilipollas :d"}
+{"noisy": "no menos importante el 2 plato que nos hemos metido para el body, una riquísima pizza \" piemontese \" @miriamcullen7", "clean": "no menos importante el 2 plato que nos hemos metido para el body, una riquísima pizza \" piamontesa \" @miriamcullen7"}
+{"noisy": "alguno mas habra , no se me ocurren mas", "clean": "alguno mas habrá , no se me ocurren mas"}
+{"noisy": "tengo más hambre que el tamagochi de un sordo.", "clean": "tengo más hambre que el tamagotchi de un sordo."}
+{"noisy": "hechoo de menos a mi mami :'(", "clean": "echo de menos a mi mamá :'("}
+{"noisy": "buenos dias camino de clase vamos a hechar la semanita de recuperaciones q hay que aprovar #sisi", "clean": "buenos dias camino de clase vamos a echar la semanita de recuperaciones q hay que aprobar #sisi"}
+{"noisy": "@andres10vera eeeeel finde que viene no, este, más y mejor!! ;) te quieeeeero", "clean": "@andres10vera el fin_de_semana que viene no, este, más y mejor!! ;) te quiero"}
+{"noisy": "arrancate tartaja yaaaa jodee jajajja que grande", "clean": "arrancate tartaja ya joder ja que grande"}
+{"noisy": "@saraydino @guadaotero97 anda k noo jajajajaja", "clean": "@saraydino @guadaotero97 anda k no jajajajaja"}
+{"noisy": "los rt's de justin me dan miedo, esta planeando algo..", "clean": "los rts de justin me dan miedo, esta planeando algo.."}
+{"noisy": "café, magdalenas y hostias en la cara.", "clean": "café, magdalenas y hostias en la cara."}
+{"noisy": "#gh8 me encanta todo!! es mui interesante ui ui uiii k lio lio ... jujuuuuu", "clean": "#gh8 me encanta todo!! es muy interesante ui ui uy k lío lío ... ju"}
+{"noisy": "porque todo el mundo es feliz? moriros todos.", "clean": "porque todo el mundo es feliz? moriros todos."}
+{"noisy": "anoche con todas las catalanas!! (: http://t.co/r6llwjltid", "clean": "anoche con todas las catalanas!! (: http://t.co/r6llwjltid"}
+{"noisy": "y ahora con una pseudopija deeeel atleti ??si ya te digo yo que... que te como la cara jajajaja #subnormal #apastarcolegaaaaa http://t.co/xzxqak0eh1", "clean": "y ahora con una pseudopija del atleti ??si ya te digo yo que... que te como la cara jajajaja #subnormal #apastarcolega http://t.co/xzxqak0eh1"}
+{"noisy": "mi diario ha muerto ya :c", "clean": "mi diario ha muerto ya :c"}
+{"noisy": "@annaaahb86 @melibeaaa__ jajajaja siii", "clean": "@annahb86 @melibea__ jajajaja sí"}
+{"noisy": "-papá ¿soy adoptado? -te elegimos negro para no tener esta conversación.", "clean": "-papá ¿soy adoptado? -te elegimos negro para no tener esta conversación."}
+{"noisy": "uff como va esta esta noxe gh !! preparada! vamos! :-)", "clean": "uf como va esta esta noche gh !! preparada! vamos! :-)"}
+{"noisy": "@albitasolamente pero sí hoy está lloviendo tambien ! jajajaja", "clean": "@albitasolamente pero sí hoy está lloviendo también ! jajajaja"}
+{"noisy": "asii es laaaa viida de caprichosa ..", "clean": "así es la viida de caprichosa .."}
+{"noisy": "pero meeee doy cuenta queeee esta todo perdido ...", "clean": "pero me doy cuenta que esta todo perdido ..."}
+{"noisy": "cenitaaaaa @jaiimecalvo @nereamontes :) http://t.co/jldytdtlog", "clean": "cenita @jaiimecalvo @nereamontes :) http://t.co/jldytdtlog"}
+{"noisy": "\"que sea difícil no significa que sea imposible, que sea imposible no significa que debas rendirte\"", "clean": "\"que sea difícil no significa que sea imposible, que sea imposible no significa que debas rendirte\""}
+{"noisy": "discutir con uno dl #ppfachamentiroso d @ppcerroamate en twitter y lo único q sabe contestar es @artorrijos comió marisco #nivel0dedebate", "clean": "discutir con uno dl #ppfachamentiroso d @ppcerroamate en twitter y lo único q sabe contestar es @artorrijos comió marisco #nivel0dedebate"}
+{"noisy": "@patribeceiro que pasa patri siges con alvaero ? o ya en casa espero que estes bien", "clean": "@patribeceiro que pasa patri sigues con alvaro ? o ya en casa espero que estes bien"}
+{"noisy": "aggg 74.280 en.el.paro.en. jaen .una.cifra catastrofica . mas del.40%de la poblacion #yovoyaemigraryamismo", "clean": "ah 74.280 en.el.paro.en. jaén .una.cifra catastrófica . mas del.40%de la población #yovoyaemigraryamismo"}
+{"noisy": "@raque_30995 jaja graciaas feaa :) traere algunos regalilloss y vallaaaa voi a pasarmeloo como nadaa :)", "clean": "@raque_30995 jaja gracias fea :) traeré algunos regalillos y valla voy a pasármelo como nada :)"}
+{"noisy": "@martalovedrew @raquelsanchez96 nos hemos libradoo de la mongolitaa !", "clean": "@martalovedrew @raquelsanchez96 nos hemos librado de la mongolita !"}
+{"noisy": "bbqscreen , comparte la pantalla de tu dispositivo android con el pc http://t.co/wakiwwyv2a", "clean": "bbqscreen , comparte la pantalla de tu dispositivo android con el pc http://t.co/wakiwwyv2a"}
+{"noisy": "@ainarahurtado piensalo bien, qe te puedo parti las muelas jajaja", "clean": "@ainarahurtado piensalo bien, que te puedo partir las muelas jajaja"}
+{"noisy": "sacale todo el juego a la vida. buenos dias", "clean": "sacale todo el juego a la vida. buenos dias"}
+{"noisy": "camara trasera recibida. ahora a ver cuando la monto http://t.co/e2hb1yozvw", "clean": "cámara trasera recibida. ahora a ver cuando la monto http://t.co/e2hb1yozvw"}
+{"noisy": "@pilarochoagh @rubenmagallon77 muy guapos! con la bici estática os mantenéis en buena forma", "clean": "@pilarochoagh @rubenmagallon77 muy guapos! con la bici estática os mantenéis en buena forma"}
+{"noisy": "las nuevas generaciones están perdidas desde el primer día.", "clean": "las nuevas generaciones están perdidas desde el primer día."}
+{"noisy": "@sofiaverdutti jajaa eso es porque me quieres ;)!?", "clean": "@sofiaverdutti ja eso es porque me quieres ;)"}
+{"noisy": "con la rubia para el bus", "clean": "con la rubia para el bus"}
+{"noisy": "igor gracias no sabia que te importara tanto joo tio !! peroooo es que eres mu feote sorry", "clean": "igor gracias no sabia que te importara tanto jo tío !! pero es que eres mu feote sorry"}
+{"noisy": "en un mes tengo examen de natu .", "clean": "en un mes tengo examen de natu ."}
+{"noisy": "@davidmj93 eso tengo que verlo yo!!", "clean": "@davidmj93 eso tengo que verlo yo!!"}
+{"noisy": "como se me abre la boca... #quesueño", "clean": "como se me abre la boca... #quesueño"}
+{"noisy": "\"cada vez que pasa por mi lado siento el corazón acelerado\".", "clean": "\"cada vez que pasa por mi lado siento el corazón acelerado\"."}
+{"noisy": "para mi tu eres primero, segundo y tercero (8)", "clean": "para mi tu eres primero, segundo y tercero (8)"}
+{"noisy": "los de verdad son los de siempre #buenasnoches.", "clean": "los de verdad son los de siempre #buenasnoches."}
+{"noisy": "\"@dijowhatsapp: las charlas con amigos a la madrugada, las mejores.\"", "clean": "\"@dijowhatsapp: las charlas con amigos a la madrugada, las mejores.\""}
+{"noisy": "\"@eu_leon: en cope sevilla para intervenir en el programa de @pacorobles63 http://t.co/rjmrsrkvju\" malajosamente desenfocada como es naturá", "clean": "\"@eu_leon: en cope sevilla para intervenir en el programa de @pacorobles63 http://t.co/rjmrsrkvju\" malajosamente desenfocada como es natural"}
+{"noisy": "buuenoo poos mee voii muu contentaa despuees dee unaa tardeecita enteraa ablando con el!! bn !!", "clean": "bueno pues mee voy muy contenta después de una tardeecita entera ablando con el!! bien !!"}
+{"noisy": "las mas guapas @mirylin @mcortesus @pifdezcordoba http://t.co/8v6tpy7jkc", "clean": "las mas guapas @mirylin @mcortesus @pifdezcordoba http://t.co/8v6tpy7jkc"}
+{"noisy": "la mejor forma de ser positivos es con una sonrisa, vamos a por esa mañana lunes.", "clean": "la mejor forma de ser positivos es con una sonrisa, vamos a por esa mañana lunes."}
+{"noisy": "se presenta un bueeen martess #bdias", "clean": "se presenta un buen martes #bdias"}

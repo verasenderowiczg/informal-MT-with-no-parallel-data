@@ -1,0 +1,10 @@
+torch>=2.0
+transformers>=4.35
+sentencepiece
+protobuf
+numpy
+scikit-learn
+matplotlib
+pyyaml
+tqdm
+peft>=0.6

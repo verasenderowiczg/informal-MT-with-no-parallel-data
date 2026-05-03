@@ -1,0 +1,4 @@
+model,en_baseline,es_baseline,en_consistency,cross_lingual,es_improvement,n_pairs,notes
+XLM-R,0.9972,0.9973,0.7390,0.8671,0.0006,20,xlm-roberta-base; from feasibility notebook previous run
+NLLB,0.7886,0.7977,0.6484,0.8142,0.0515,20,facebook/nllb-200-distilled-600M encoder; from feasibility notebook
+CANINE,0.7722,0.8067,0.2957,0.2568,-0.0016,20,google/canine-s; from feasibility notebook (mislabeled as XLM-R in code)
