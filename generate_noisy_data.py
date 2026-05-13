@@ -247,9 +247,20 @@ def noisify_sentence(clean_text, mappings, intensity="medium"):
 
         result.append(w)
 
-    # 3. Vowel elongation — at most 1 word per sentence, 30% of sentences
-    if random.random() < 0.3:
-        eligible = [i for i, w in enumerate(result) if len(w) > 3 and any(c in "aeiouáéíóú" for c in w.lower())]
+    # 3. Vowel elongation — at most 1 word per sentence, 20% of sentences
+    # Only elongate words at end of sentence or just before a comma/period
+    if random.random() < 0.2:
+        eligible = [
+            i for i, w in enumerate(result)
+            if len(w) > 3
+            and any(c in "aeiouáéíóú" for c in w.lower())
+            and (
+                i == len(result) - 1                        # last word
+                or result[i].endswith(",")                  # before comma
+                or result[i].endswith(".")                  # before period
+                or (i + 1 < len(result) and result[i + 1].startswith(","))  # next token is comma
+            )
+        ]
         if eligible:
             idx = random.choice(eligible)
             result[idx] = elongate_vowels(result[idx])
