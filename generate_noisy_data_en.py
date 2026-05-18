@@ -1,33 +1,24 @@
 """
-Generate synthetic noisy Spanish training data for spa_noisy_Latn fine-tuning.
+Generate synthetic noisy English training data for eng_noisy_Latn fine-tuning.
 
-Sources:
-  - OpenSubtitles Spanish monolingual text (dialogue, informal register)
-  - MultiLexNorm ES train.norm + test.norm (word-level noisy↔clean mappings)
-
-Transforms applied stochastically:
-  1. Abbreviation substitution (from MultiLexNorm mappings)
-  2. Accent dropping (á→a, é→e, etc.)
-  3. Vowel elongation (locaaa, siiii)
-  4. Punctuation repetition (? → ???, ! → !!!)
-  5. Lowercase everything
-  6. d-dropping in -ado/-ido (cansado → cansao)
+Mirrors generate_noisy_data.py but adapted for English noise patterns:
+  - No accent dropping (English doesn't use accents)
+  - No d-dropping (Spanish-specific)
+  - Abbreviations from EN MultiLexNorm (u, ur, bc, pls, dat, etc.)
+  - Vowel elongation (sooo, yesss, nooo)
+  - Punctuation repetition
+  - g-dropping in -ing (running → runnin)
+  - English interjections (lol, lmao, omg, bruh, ngl, fr)
 
 Usage:
-    # Step 1: Download OpenSubtitles Spanish (one-time, ~300MB compressed)
-    wget -O es.txt.gz "https://opus.nlpl.eu/download.php?f=OpenSubtitles/v2018/mono/es.txt.gz"
-    gunzip es.txt.gz
+    python generate_noisy_data_en.py \
+        --opensubs_path en_sample.txt \
+        --multilexnorm_train data/multilexnorm/en/train.norm \
+        --multilexnorm_test data/multilexnorm/en/test.norm \
+        --output_path data/multilexnorm/en_synthetic_noisy_5k.jsonl \
+        --n_samples 2640
 
-    # Step 2: Run this script
-    python generate_noisy_data.py \
-        --opensubs_path es.txt \
-        --multilexnorm_train data/multilexnorm/es/train.norm \
-        --multilexnorm_test data/multilexnorm/es/test.norm \
-        --output_path data/multilexnorm/es_synthetic_noisy.jsonl \
-        --n_samples 3000
-
-    # Step 3: Combine with real data for training
-    cat data/multilexnorm/es_train_augmented.jsonl data/multilexnorm/es_synthetic_noisy.jsonl > data/multilexnorm/es_combined_train.jsonl
+    cat data/multilexnorm/en_train_augmented.jsonl data/multilexnorm/en_synthetic_noisy_5k.jsonl > data/multilexnorm/en_combined_train_5k.jsonl
 """
 
 import argparse
@@ -44,8 +35,8 @@ from collections import defaultdict
 def load_multilexnorm_mappings(*norm_paths):
     """
     Parse MultiLexNorm .norm files.
-    Format: noisy_word\\tclean_word per line, blank lines or *\\t* separate sentences.
-    Returns: dict of clean_word_lower → [list of noisy variants]
+    Format: noisy_word\tclean_word per line, blank lines or *\t* separate sentences.
+    Returns: dict of clean_word_lower -> [list of noisy variants]
     """
     mappings = defaultdict(set)
 
@@ -59,34 +50,30 @@ def load_multilexnorm_mappings(*norm_paths):
                 if len(parts) != 2:
                     continue
                 noisy, clean = parts[0].strip(), parts[1].strip()
-                # Skip identical pairs
                 if noisy.lower() == clean.lower():
                     continue
-                # Skip pure punctuation
                 if not any(c.isalpha() for c in clean):
                     continue
                 mappings[clean.lower()].add(noisy)
 
-    # Convert sets to lists for random.choice
     mappings = {k: list(v) for k, v in mappings.items()}
 
-    print(f"  Loaded {len(mappings)} unique clean→noisy word mappings")
-    # Show some examples
+    print(f"  Loaded {len(mappings)} unique clean->noisy word mappings")
     examples = list(mappings.items())[:10]
     for clean, noisy_list in examples:
-        print(f"    {clean} → {noisy_list[:3]}")
+        print(f"    {clean} -> {noisy_list[:3]}")
 
     return mappings
 
 
 # ============================================================
-# 2. Load OpenSubtitles sentences
+# 2. Load source sentences
 # ============================================================
 
-def load_opensubs_sentences(path, mappings=None, n_candidates=20000,
-                            min_words=4, max_words=20):
+def load_source_sentences(path, mappings=None, n_candidates=20000,
+                          min_words=4, max_words=20):
     """
-    Load Spanish subtitle lines, splitting into abbreviation-rich and regular pools.
+    Load English sentences, splitting into abbreviation-rich and regular pools.
     When mappings is provided, sentences containing abbreviatable words are
     tracked separately so generate_dataset() can oversample them.
     """
@@ -131,28 +118,11 @@ def load_opensubs_sentences(path, mappings=None, n_candidates=20000,
 
 
 # ============================================================
-# 3. Noisification transforms
+# 3. Noisification transforms (English-specific)
 # ============================================================
 
-ACCENT_MAP = {
-    "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u",
-    "Á": "A", "É": "E", "Í": "I", "Ó": "O", "Ú": "U",
-    "ü": "u", "Ü": "U",
-}
-
-def drop_accents(text, prob=0.8):
-    """Drop accents from vowels with given probability."""
-    result = []
-    for char in text:
-        if char in ACCENT_MAP and random.random() < prob:
-            result.append(ACCENT_MAP[char])
-        else:
-            result.append(char)
-    return "".join(result)
-
-
 def elongate_vowels(word):
-    """Elongate the last vowel in a word: 'loco' → 'locooo'."""
+    """Elongate the last vowel in a word: 'please' -> 'pleaase'."""
     vowel_positions = [i for i, c in enumerate(word.lower()) if c in "aeiou"]
     if not vowel_positions:
         return word
@@ -162,11 +132,10 @@ def elongate_vowels(word):
 
 
 def repeat_punctuation(text, prob=0.3):
-    """Repeat sentence-final punctuation: '?' → '???', '!' → '!!!'"""
+    """Repeat sentence-final punctuation: '?' -> '???', '!' -> '!!!'"""
     if random.random() > prob:
         return text
 
-    # Find trailing punctuation
     match = re.search(r"([?!.]+)\s*$", text)
     if not match:
         return text
@@ -180,18 +149,14 @@ def repeat_punctuation(text, prob=0.3):
     return text
 
 
-def drop_d_in_ado(word, prob=0.4):
-    """cansado → cansao, comido → comío"""
+def drop_g_in_ing(word, prob=0.4):
+    """running -> runnin, going -> goin"""
     if random.random() > prob:
         return word
-    # -ado → -ao
-    if word.lower().endswith("ado"):
-        return word[:-3] + word[-3].replace("a", "a") + "o"  # keep case
-    if word.lower().endswith("ado,") or word.lower().endswith("ado."):
-        return word[:-4] + "ao" + word[-1]
-    # -ido → -ío (less common but exists)
-    if word.lower().endswith("ido"):
-        return word[:-3] + "ío"
+    if word.lower().endswith("ing") and len(word) > 4:
+        return word[:-1]
+    if word.lower().endswith("ing,") or word.lower().endswith("ing."):
+        return word[:-2] + word[-1]
     return word
 
 
@@ -200,37 +165,27 @@ def substitute_abbreviation(word, mappings):
     key = word.lower().rstrip(".,;:!?")
     if key in mappings:
         noisy = random.choice(mappings[key])
-        # Preserve trailing punctuation
         trailing = word[len(key):] if len(word) > len(key) else ""
         return noisy + trailing
     return word
 
 
 def noisify_sentence(clean_text, mappings, intensity="medium"):
-    """
-    Apply stochastic noisification transforms to a clean sentence.
-    intensity: "light", "medium", "heavy" — controls how many transforms apply.
-    """
+    """Apply stochastic English noisification transforms."""
     if intensity == "light":
         abbrev_prob = 0.2
-        accent_prob = 0.5
-        elong_prob = 0.0
         punct_prob = 0.15
-        d_drop_prob = 0.2
+        g_drop_prob = 0.2
         lowercase_prob = 0.6
     elif intensity == "heavy":
         abbrev_prob = 0.8
-        accent_prob = 0.95
-        elong_prob = 0.0
         punct_prob = 0.5
-        d_drop_prob = 0.6
+        g_drop_prob = 0.6
         lowercase_prob = 0.95
     else:  # medium
         abbrev_prob = 0.4
-        accent_prob = 0.8
-        elong_prob = 0.0
         punct_prob = 0.3
-        d_drop_prob = 0.4
+        g_drop_prob = 0.4
         lowercase_prob = 0.8
 
     words = clean_text.split()
@@ -239,27 +194,24 @@ def noisify_sentence(clean_text, mappings, intensity="medium"):
     for word in words:
         w = word
 
-        # 1. Abbreviation substitution
         if random.random() < abbrev_prob:
             w = substitute_abbreviation(w, mappings)
 
-        # 2. d-dropping in -ado/-ido
-        w = drop_d_in_ado(w, prob=d_drop_prob)
+        w = drop_g_in_ing(w, prob=g_drop_prob)
 
         result.append(w)
 
-    # 3. Vowel elongation — at most 1 word per sentence, 20% of sentences
-    # Only elongate words at end of sentence or just before a comma/period
+    # Vowel elongation -- at most 1 word, 20% of sentences, natural positions
     if random.random() < 0.2:
         eligible = [
             i for i, w in enumerate(result)
             if len(w) > 3
-            and any(c in "aeiouáéíóú" for c in w.lower())
+            and any(c in "aeiou" for c in w.lower())
             and (
-                i == len(result) - 1                        # last word
-                or result[i].endswith(",")                  # before comma
-                or result[i].endswith(".")                  # before period
-                or (i + 1 < len(result) and result[i + 1].startswith(","))  # next token is comma
+                i == len(result) - 1
+                or result[i].endswith(",")
+                or result[i].endswith(".")
+                or (i + 1 < len(result) and result[i + 1].startswith(","))
             )
         ]
         if eligible:
@@ -268,29 +220,21 @@ def noisify_sentence(clean_text, mappings, intensity="medium"):
 
     text = " ".join(result)
 
-    # 4. Drop accents
-    text = drop_accents(text, prob=accent_prob)
-
-    # 5. Punctuation repetition
     text = repeat_punctuation(text, prob=punct_prob)
 
-    # 6. Lowercase
     if random.random() < lowercase_prob:
         text = text.lower()
 
-    # 7. Drop inverted punctuation marks (¿ ¡) — never used in informal social media
-    text = text.replace("¿", "").replace("¡", "")
-
-    # 8. Drop trailing period — informal messages rarely end with one
+    # Drop trailing period
     if random.random() < 0.8:
         text = re.sub(r"\.\s*$", "", text)
 
-    # 9. Random interjection at end of sentence
+    # Random interjection
     if random.random() < 0.15:
-        interjections = ["jajaja", "jajaj", "jeje", "xd", "xdd", "lol", "lmao", "jajajaja"]
+        interjections = ["lol", "lmao", "omg", "bruh", "ngl", "fr", "smh", "tbh"]
         text = text.rstrip() + " " + random.choice(interjections)
 
-    # 10. Clean up trailing comma artifacts from subtitles
+    # Clean up trailing comma
     text = re.sub(r",\s*$", "", text)
 
     return text
@@ -352,37 +296,33 @@ def generate_dataset(abbrev_rich, regular, mappings, n_samples=3000,
 # ============================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate synthetic noisy Spanish data")
+    parser = argparse.ArgumentParser(description="Generate synthetic noisy English data")
     parser.add_argument("--opensubs_path", type=str, required=True,
-                        help="Path to OpenSubtitles Spanish plain text (es.txt)")
+                        help="Path to English plain text corpus")
     parser.add_argument("--multilexnorm_train", type=str, required=True,
-                        help="Path to MultiLexNorm ES train.norm")
+                        help="Path to MultiLexNorm EN train.norm")
     parser.add_argument("--multilexnorm_test", type=str, required=True,
-                        help="Path to MultiLexNorm ES test.norm (or dev.norm)")
-    parser.add_argument("--output_path", type=str, default="es_synthetic_noisy.jsonl",
+                        help="Path to MultiLexNorm EN test.norm")
+    parser.add_argument("--output_path", type=str, default="en_synthetic_noisy.jsonl",
                         help="Output JSONL path")
     parser.add_argument("--n_samples", type=int, default=3000,
                         help="Number of synthetic pairs to generate")
     parser.add_argument("--n_candidates", type=int, default=20000,
-                        help="Number of OpenSubtitles lines to consider")
+                        help="Number of source lines to consider")
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
-    # Load abbreviation mappings
-    print("Loading MultiLexNorm word mappings...")
+    print("Loading MultiLexNorm EN word mappings...")
     mappings = load_multilexnorm_mappings(args.multilexnorm_train, args.multilexnorm_test)
 
-    # Load source sentences (split by abbreviation potential)
-    print(f"\nLoading OpenSubtitles sentences from {args.opensubs_path}...")
-    abbrev_rich, regular = load_opensubs_sentences(
+    print(f"\nLoading source sentences from {args.opensubs_path}...")
+    abbrev_rich, regular = load_source_sentences(
         args.opensubs_path, mappings=mappings, n_candidates=args.n_candidates)
 
-    # Generate noisy pairs
     print(f"\nGenerating {args.n_samples} synthetic noisy/clean pairs...")
     pairs = generate_dataset(abbrev_rich, regular, mappings,
                              n_samples=args.n_samples, seed=args.seed)
 
-    # Write output
     with open(args.output_path, "w", encoding="utf-8") as f:
         for pair in pairs:
             f.write(json.dumps(pair, ensure_ascii=False) + "\n")
