@@ -1,0 +1,786 @@
+\documentclass[11pt]{article}
+
+% Change "review" to "final" to generate the final (sometimes called camera-ready) version.
+% Change to "preprint" to generate a non-anonymous version with page numbers.
+\usepackage[preprint]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters
+\usepackage[T1]{fontenc}
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% Improves layout of the manuscript
+\usepackage{microtype}
+
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+% Additional packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\title{Bypassing the Parallel Data Constraint: Adapting NLLB-200 for Informal EN--ES Translation with Monolingual Data Alone}
+
+\author{Asier Azpiri Iriarte \and Sofía Barajas Pascual \and Vera Senderowicz Guerra \\
+  UPV / EHU \\
+  \texttt{aazpiri010@ikasle.ehu.eus} \quad \texttt{sbarajas001@ikasle.ehu.eus} \quad \texttt{vsenderowicz001@ikasle.ehu.eus}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Translating informal, noisy, social-media-style text remains a challenge 
+for NMT systems trained on clean parallel corpora. The standard remedy 
+of in-domain fine-tuning is unavailable for most language pairs, including 
+English (EN)--Spanish (ES), where informal parallel data do not exist. We explore whether NLLB-200 can be adapted to produce informal Spanish 
+from informal English without parallel data, using synthetically 
+generated monolingual clean$\leftrightarrow$noisy pairs that we release to support future work. A systematic ablation over architecture modes and 
+embedding initialisations shows that decoder-only LoRA fine-tuning is 
+promising for informal production, while encoder-side adaptation does not compose cross-lingually despite strong monolingual performance. A geometric analysis across three multilingual encoders finds the clean$\leftrightarrow$noisy direction 
+statistically present but too variable across sentence pairs to serve as 
+an initialisation prior, a null result confirmed independently by the 
+ablation. A cascade pipeline making the task decomposition explicit 
+---denoising, translation, noisification--- produces fully translated informal output that no single-model system achieves. The remaining gap is well-localised: neither system reliably produces target-side abbreviations, and source-side pragmatic markers  are lost in translation: erased during denoising and unrecoverable downstream.
+\end{abstract}
+
+%% ─── 1. INTRODUCTION ──────────────────────────────────────────────────────────
+\section{Introduction}
+
+A significant fraction of text produced online is informal: social media posts,
+instant messages, and chat logs are characterised by a casual register that
+manifests as orthographic noise: abbreviations, vowel elongations, non-standard
+capitalisation, dropped punctuation, code-switching, and domain-specific slang.
+NMT systems achieve remarkable results on well-formed text, but their performance
+degrades when confronted with these surface deformations, a brittleness rooted
+in train--test distribution mismatch.
+
+The standard remedy is fine-tuning on in-domain parallel data, but it would require parallel corpora of informal bilingual text, which for most language pairs---including our target pair, EN--ES---do not exist. This constraint motivates our research questions: Can a multilingual NMT system learn to translate into
+informal register from monolingual data alone? And does NLLB-200 already encode the clean$\leftrightarrow$noisy distinction in a geometrically
+exploitable way?
+
+We work with NLLB-200-distilled-600M throughout. Rather than offloading the
+problem to a much larger model, we are interested in whether informal register
+can be learned efficiently under real computational constraints, using a model
+small enough to fine-tune on modest hardware.
+
+We make two contributions: a 10K monolingual clean$\leftrightarrow$noisy dataset
+for EN and ES, released publicly;\footnote{\url{https://github.com/verasenderowiczg/informal-MT-with-no-parallel-data}} and a systematic study of
+monolingual adaptation strategies for informal EN$\rightarrow$ES translation,
+showing that decoder-only LoRA fine-tuning on NLLB-200 achieves $+$6.1 BLEU
+over baseline, that encoder-side adaptation does not compose cross-lingually,
+and that a cascade pipeline combining a fine-tuned encoder and a fine-tuned decoder achieves $+$3.0 BLEU and $+$4.6 chrF while producing a combination of full translation and informal surface forms that no single-model system achieves.
+%% ─── 2. RELATED WORK ──────────────────────────────────────────────────────────
+\section{Related Work}
+\label{sec:related_work}
+
+NMT systems trained on clean parallel corpora degrade when confronted with the orthographic and lexical noise characteristic of social media text. \citet{michel2018mtnt} quantified this brittleness with MTNT: focusing on register \emph{robustness} (handling informal input), they show that performance drops persist
+even after in-domain fine-tuning on noisy parallel data. The broader robust-MT literature \citep{chu2018survey} has largely followed the same framing: informality as an \emph{input} problem, where the goal is to prevent noisy source text from
+degrading translation quality. Our work targets the complementary \emph{output} problem: producing informal target text that preserves the register of the source rather than normalising it away. Output register has been controlled through formality tags \citep{niu2020formality} and multi-task learning that combines
+monolingual formality transfer with bilingual translation \citep{niu2018multi}, but both lines of work target clean formal\slash informal variation (not including noisy social media text, where surface deformations go beyond register and include abbreviations, non-standard orthography, and code-switching). They also assume access to parallel bilingual data, which do not exist for noisy social media text in most language pairs, including ours.
+
+The absence of parallel data makes monolingual adaptation strategies attractive.
+Back-translation \citep{sennrich2016backtranslation, edunov2018backtranslation}
+can generate synthetic parallel data from monolingual target text, but assumes
+a system that already translates in the reverse direction, which is unhelpful when the
+target distribution itself is what needs to be learned. More relevant is the
+finding that monolingual training can transfer cross-lingually:
+\citet{artetxe2020crosslingual} show that monolingual models learn structural
+abstractions that transfer when only the embedding layer is replaced. Whether
+this extends to register---whether an encoder trained on informal English and a
+decoder trained on informal Spanish can compose through a shared translation
+pathway---is an open question our ablation addresses directly. This same
+question motivates a geometric test: multilingual embedding spaces exhibit
+consistent structural regularities \citep{mikolov2013linguistic,
+artetxe2018robust, cai2022geometry, subramanian2022extracting}, and if
+NLLB-200 encodes the clean$\leftrightarrow$noisy distinction as a consistent
+direction, that direction could both signal that the representations are
+structured enough to compose \emph{and} provide an informed initialisation for
+the new register tokens. We test this hypothesis before the fine-tuning
+ablation.
+
+
+\section{Method}
+\label{sec:method}
+\sloppy
+
+
+We extend NLLB-200's vocabulary with two new BOS
+tokens---\texttt{eng\_noisy\_Latn} and
+\texttt{spa\_noisy\_Latn}, treating informal register as a
+language variant. This preserves the model's existing
+behaviour on standard tokens while confining adaptation to
+the new variants and their associated LoRA adapters, avoiding
+degradation on the clean translation task. The approach
+repurposes a mechanism designed for typologically distant
+languages \citep{berard-2021-continual, kamau-2025-challenge}
+for a subtler shift: clean vs.\ noisy register within the
+same language. Since the new tokens require embedding
+initialisation, a natural question arises: can we do better
+than random?
+
+
+\subsection{Embedding Initialisation: A Geometric Test}
+\label{sec:analysis}
+
+If NLLB-200's encoder already represented the
+clean$\leftrightarrow$noisy distinction as a consistent geometric
+direction---a vector offset that pointed reliably the same way in both
+English and Spanish---that direction could provide an informed
+initialisation: setting \texttt{spa\_noisy\_Latn} =
+\texttt{spa\_Latn} + $\bar{\delta}$, where $\bar{\delta}$ is the
+mean noise direction estimated from the model's own
+representations.
+
+We test three models---XLM-R \citep{conneau2020xlmr}, NLLB-200
+\citep{nllb2022}, and CANINE \citep{clark2022canine}---varying in
+tokenisation (subword vs.\ character-level) and training
+objective (Masked Language Modeling vs.\ translation) to determine if
+there is a geometric pattern and whether it is model-specific or general. The data used consists of  45 parallel EN-ES sentences with noisy and clean pairs, manufactured by linguists native in both languages in scope.
+For each model we compute the following difference vectors:
+\begin{enumerate}[noitemsep,topsep=2pt]
+  \item \emph{Cross-lingual direction} (aggregate):
+        $\cos(\bar{\delta}^{\text{EN}}, \bar{\delta}^{\text{ES}})$.
+        Measures whether the \emph{average} noise direction points the same way
+        in both languages, which would be a necessary condition for a shared geometric axis.
+  \item \emph{Per-pair cross-lingual cosine}:
+        $\cos(\delta_i^{\text{EN}}, \delta_i^{\text{ES}})$ averaged over pairs.
+        Tests whether the alignment holds at the level of individual sentences,
+        not just in aggregate.
+  \item \emph{ES improvement from EN direction}: mean gain in cosine similarity
+        when a clean ES embedding is shifted by $\bar{\delta}^{\text{EN}}$.
+        The practical test: can the English noise direction be applied to Spanish
+        embeddings to approximate actual noisy Spanish representations?
+\end{enumerate}
+
+\begin{table}[t]
+  \centering
+  \small
+  \setlength{\tabcolsep}{2.5pt}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{lccc}
+    \toprule
+    \textbf{Metric} & \textbf{XLM-R} & \textbf{NLLB} & \textbf{CANINE} \\
+    \midrule
+    Cross-ling.\ dir.\ (agg) & 0.858 & 0.861 & 0.473 \\
+    Per-pair cross-ling.     & 0.509 & 0.558 & 0.179 \\
+    ES impr.\ from EN shift  & 0.001 & 0.073 & 0.004 \\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Three-model comparison on 45 parallel EN--ES pairs.}
+  \label{tab:embedding_analysis}
+\end{table}
+
+Table \ref{tab:embedding_analysis} shows that aggregate cross-lingual cosine is high for both subword models, but the per-pair mean reveals 
+that the aggregate is inflated by averaging in
+high-dimensional space. The practical shift test confirms the
+direction is too weak to steer representations: applying
+$\bar{\delta}^{\text{EN}}$ to clean ES embeddings yields only
+7.3\% cosine improvement in NLLB. CANINE shows much lower cross-lingual structure, confirming that its character-level tokenisation encodes noise language-specifically.
+
+These results suggest the direction is unlikely to help as an
+initialisation prior. We still test this prediction in the
+fine-tuning ablation by comparing three embedding
+initialisation strategies, defined in Section
+\ref{ss:arch}. Importantly, the 45 pairs used
+to estimate the direction are also used for evaluation of the downstream task. This
+is deliberate: it gives the direction-based initialisation
+its best possible chance, since the offset is derived from the
+very data it will be tested on. If even this maximally
+favourable setting confers no advantage, the direction is
+confirmed to be uninformative.
+
+\subsection{Data}
+
+We reconstruct sentence-level pairs from MultiLexNorm
+\citep{vdgoot2021multilexnorm} word-level noisy$\rightarrow$clean mappings for
+social media text in both languages, yielding 568 ES and 2,478 EN training pairs (taken from their train split) and 531 ES and 482 EN development pairs (taken from their test split) used for early stopping.
+
+We then expand the training set by constructing the noisy-side of the pairs 
+by applying rule-based transformations to clean sentences sampled from
+OpenSubtitles \citep{lison2016opensubtitles}, filtered by length and
+oversampled for sentences containing abbreviatable words. 
+Following professional linguistic advice, transformations are drawn from two categories:
+\emph{Orthographic transforms} modify surface form: accent dropping, lowercasing, vowel elongation, punctuation repetition, inverted punctuation removal (for ES), and
+d-dropping in past participles (\textit{dado}$\rightarrow$\textit{dao}, for ES).
+\emph{Lexical transforms} substitute words: abbreviations from MultiLexNorm
+mappings (e.g., \textit{porque}$\rightarrow$\textit{xq}, for ES;
+\textit{running}$\rightarrow$\textit{runnin'}, for EN) and interjection injection
+(\textit{jajaja}, \textit{xd}, \textit{lol}).
+Each transform is applied stochastically: per-sentence intensity is sampled
+from three levels (light, medium, heavy) that jointly control the probability
+of each transform, and sentences with less than 5\% character-level edit
+distance from the original are discarded.
+
+As a result, fine-tuning is done on $\sim$10k pairs per language: ES 568 real + 9,373 synthetic; EN 2,478 real + 7,518 synthetic.
+
+\subsection{Architecture Modes}
+\label{ss:arch}
+
+We define three fine-tuning modes to test whether informal register production and comprehension can be learned at the encoder, the decoder, or both, and whether
+the two can compose cross-lingually:
+
+\textbf{Decoder-only}: encoder frozen; decoder LoRA trained on clean ES $\rightarrow$
+noisy ES (\texttt{spa\_noisy\_Latn} BOS). Tests whether informal
+\emph{production} alone is sufficient. Designed inference: \texttt{eng\_Latn}
+$\rightarrow$ \texttt{spa\_noisy\_Latn}.
+
+\textbf{Encoder-only}: decoder frozen; encoder LoRA trained on noisy EN
+(\texttt{eng\_noisy\_Latn}) $\rightarrow$ clean EN (\texttt{eng\_Latn} BOS).
+Tests whether the encoder can learn
+to normalise informal English input. Designed
+inference: \texttt{eng\_noisy\_Latn} $\rightarrow$ \texttt{spa\_Latn}.
+
+\textbf{Combined}: both encoder and decoder LoRA trained jointly on interleaved
+EN and ES monolingual pairs. Tests composition of comprehension and production.
+Designed inference: \texttt{eng\_noisy\_Latn} $\rightarrow$ \texttt{spa\_noisy\_Latn}.
+
+\paragraph{Implementation details.}
+Base model: NLLB-200-distilled-600M ($\sim$615M parameters). LoRA rank 16,
+$\alpha{=}32$, dropout 0.05, applied to \texttt{q\_proj} and \texttt{v\_proj}.
+Trainable parameters: 786K (encoder-only, 0.13\%), 1.57M (decoder-only, 0.26\%),
+2.36M (combined, 0.38\%). Optimizer: AdamW (lr=$3 \times 10^{-4}$, weight decay
+0.01), 10 epochs, effective batch size 32.
+
+NLLB switches output language via the BOS token, but this mechanism assumes the
+target distributions are sufficiently distinct (e.g., Spanish vs.\ French).
+For closely related register variants---\texttt{spa\_Latn}
+vs.\ \texttt{spa\_noisy\_Latn}---the token distributions
+overlap to such a degree that the model produces identical
+output regardless of which BOS token is used. We resolve this by using the adapter itself as the switch: informal output is generated with LoRA adapters enabled, formal output with adapters disabled. This design choice is a prerequisite for all experiments
+that follow.
+
+\paragraph{Embedding Initialization Ablation}
+
+The geometric analysis in \ref{sec:analysis} found the
+clean$\leftrightarrow$noisy direction too inconsistent to serve as a zero-shot
+steering mechanism. However, since the direction has been computed and new token
+embeddings (\texttt{spa\_noisy\_Latn} $=$ \texttt{spa\_Latn} $+$ offset) must
+be initialised regardless, we test whether it provides a better starting point
+than random initialisation. We compare three strategies:
+
+\begin{itemize}[noitemsep,topsep=2pt]
+  \item \textbf{direction\_init}: offset = mean noise direction from the
+        geometric analysis.
+  \item \textbf{random\_same\_mag}: offset = random vector with the same
+        magnitude as the noise direction. Isolates the effect of direction
+        by holding magnitude constant.
+  \item \textbf{random\_uninformed}: offset = random vector at standard
+        initialisation scale. Controls for both direction and magnitude.
+\end{itemize}
+
+We train every combination of architecture mode (encoder-only, decoder-only,
+combined) and initialisation strategy (direction\_init, random\_same\_mag,
+random\_uninformed), for a total of 9 training runs. 
+
+\subsection{Evaluation}
+\label{sec:eval}
+
+We evaluate on the 45 handwritten parallel EN--ES pairs from
+Section~\ref{sec:analysis}, with verified zero overlap with
+training and developer data. This set is intentionally small:
+due to time constraints, a larger set would have made full linguist
+review infeasible, and human assessment of informal markers
+is our primary evidence for cross-lingual register trasnfer, as we are aware that automatic metrics are poorly suited to evaluating informal register in translation output \cite{michel2018mtnt}. Instead, these serve three supporting roles: testing the geometric initialisation hypothesis, measuring noisification and denoising performance, and identifying clearly underperforming cross-lingual configurations so that the qualitative review
+can focus on the most competitive systems. We report BLEU and
+chrF \citep{popovic2015chrf} using \texttt{sacrebleu}
+\citep{post2018sacrebleu}, and COMET \citep{rei-etal-2020-comet}
+as a complementary adequacy signal. Given the small set,
+differences are indicative rather than conclusive, and COMET
+should be treated with additional caution as it was not
+designed for informal register and may penalise correct
+informal output. The qualitative review was conducted by a
+trained linguist, who examined outputs across all systems for
+six informal markers: accent dropping, lowercasing, vowel
+elongation, abbreviations, interjection adaptation, and English
+passthrough. The findings inform the discussion in
+\S\ref{sec:results_human}.
+
+Since each architecture mode was trained on a different monolingual task, we
+evaluate each on the task it can meaningfully perform. All modes that train an encoder are evaluated on EN denoising (Table~\ref{tab:denoise_results}), isolating informal
+English comprehension. All modes that train a
+decoder are evaluated on ES noisification (Table~\ref{tab:noisify_results}),
+isolating informal Spanish production. Decoder-only and combined
+are evaluated on informal EN$\rightarrow$informal ES translation
+(Table~\ref{tab:primary_results}), the end-to-end goal.
+
+
+\subsection{Results: Automatic Metrics}
+\label{sec:results_auto}
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{llrrr}
+    \toprule
+    \textbf{Mode} & \textbf{Init} & \textbf{BLEU} & \textbf{chrF} & \textbf{COMET} \\
+    \midrule
+    \multirow{3}{*}{dec.\ only}
+      & dir\_init   & \textbf{26.13} & 59.58 & \textbf{0.833} \\
+      & rand\_mag   & 25.59 & \textbf{59.82} & 0.832 \\
+      & rand\_uninf & 25.32 & 59.27 & 0.831 \\
+    \midrule
+    \multirow{3}{*}{combined}
+      & dir\_init   & 25.41 & \textbf{61.64} & \textbf{0.842} \\
+      & rand\_mag   & \textbf{24.93} & 60.77 & 0.831 \\
+      & rand\_uninf & 24.34 & 60.87 & 0.834 \\
+    \bottomrule
+  \end{tabular}
+  \caption{ES noisification: clean ES$\rightarrow$informal ES
+    (\texttt{spa\_Latn}$\rightarrow$\texttt{spa\_noisy\_Latn}, LoRA ON).
+    Tests informal Spanish production in isolation.}
+  \label{tab:noisify_results}
+\end{table}
+
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{llrrr}
+    \toprule
+    \textbf{Mode} & \textbf{Init} & \textbf{BLEU} & \textbf{chrF} & \textbf{COMET} \\
+    \midrule
+    \multirow{3}{*}{enc.\ only}
+      & rand\_mag   & \textbf{45.81} & 71.05 & 0.872 \\
+      & dir\_init   & 45.50 & 71.12 & 0.870 \\
+      & rand\_uninf & 45.48 & \textbf{71.32} & \textbf{0.874} \\
+    \midrule
+    \multirow{3}{*}{combined}
+      & rand\_mag   & \textbf{45.46} & \textbf{70.80} & \textbf{0.872} \\
+      & rand\_uninf & 45.12 & 70.77 & 0.868 \\
+      & dir\_init   & 44.78 & 70.47 & 0.869 \\
+    \bottomrule
+  \end{tabular}
+  \caption{EN denoising: informal EN$\rightarrow$clean EN
+    (\texttt{eng\_noisy\_Latn}$\rightarrow$\texttt{eng\_Latn}, LoRA ON).
+    Tests informal English comprehension in isolation (10k regime).}
+  \label{tab:denoise_results}
+\end{table}
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{llrrr}
+    \toprule
+    \textbf{Mode} & \textbf{Init} & \textbf{BLEU} & \textbf{chrF} & \textbf{COMET} \\
+    \midrule
+    Baseline & --- & 15.35 & 40.77 & 0.697 \\
+    \midrule
+    \multirow{3}{*}{dec.\ only}
+      & rand\_uninf & \textbf{21.49} & \textbf{44.55} & \textbf{0.733} \\
+      & dir\_init   & 18.92 & 43.41 & \textbf{0.733} \\
+      & rand\_mag   & 18.78 & 43.57 & 0.729 \\
+    \midrule
+    \multirow{3}{*}{combined}
+      & rand\_uninf & \textbf{11.78} & 30.27 & 0.634 \\
+      & dir\_init   & 10.68 & 27.27 & 0.634 \\
+      & rand\_mag   &  9.53 & \textbf{28.95} & \textbf{0.642} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Informal EN$\rightarrow$informal ES. Decoder-only
+    evaluated as \texttt{eng\_Latn}$\rightarrow$\texttt{spa\_noisy\_Latn};
+    combined as
+    \texttt{eng\_noisy\_Latn}$\rightarrow$\texttt{spa\_noisy\_Latn}.
+    Reference-based metrics scored against handwritten noisy ES.}
+  \label{tab:primary_results}
+\end{table}
+
+Monolingual noisification performance on ES is similar with both modes
+(Table~\ref{tab:noisify_results}). Denoising on EN is stronger across modes, but encoder-only and combined also achieve similar denoising performance
+(Table~\ref{tab:denoise_results}), meaning that the encoder effectively learns to normalise informal English. Despite the lower metrics, the human review confirmed that both noisification modes produce accent dropping, lowercasing, and vowel elongation,though neither reliably generate Spanish abbreviations.
+
+\paragraph{On the cross-lingual task, decoder-only wins: combined capabilities do not compose.}
+Decoder-only achieves the best cross-lingual results
+(Table~\ref{tab:primary_results}), with the largest gains over baseline of all
+conditions. More strikingly, combined mode---despite strong performance on both
+monolingual tasks (Tables~\ref{tab:noisify_results}
+and~\ref{tab:denoise_results})---falls well below decoder-only on the
+cross-lingual task, with a gap large enough to be meaningful. The two monolingual training signals do not compose into a
+cross-lingual bridge.
+
+The composition gap admits several possible explanations.
+The most directly testable is representational incompatibility:
+the encoder, trained to denoise English, may learn to map noisy
+input to a region of internal representation space that works
+well for reconstructing clean English, but that the
+translation mechanism was not trained to route toward Spanish
+generation. Additional factors may include that LoRA
+at rank 16 adds only 2.36M parameters in combined mode
+(0.38\% of the model).
+
+Confirming these explanations is left to future
+work. Regardless, the practical
+implication is clear: for this model and adapter configuration,
+monolingual training signals do not compose cross-lingually.
+
+\paragraph{Embedding initialisation is irrelevant.}
+Across all runs and evaluation conditions
+(Tables~\ref{tab:primary_results}--\ref{tab:denoise_results}), no meaningful
+performance difference is attributable to initialisation strategy. This confirms the
+geometric analysis from Section \ref{sec:analysis}: the clean$\leftrightarrow$noisy direction provides no advantage.
+
+\subsection{Results: Human Review}
+\label{sec:results_human}
+
+A qualitative evaluation of our best system (the best performing decoder-only)
+reveals three main failure patterns, exemplified in Table~\ref{tab:qualitative} and described below:
+\paragraph{Absence of abbreviations:}the system never
+produces the word-level substitutions most characteristic of informal Spanish
+register---\textit{xq} for \textit{porque}, \textit{q} for \textit{que},
+\textit{bn} for \textit{bien}---despite these appearing quite densely in the
+references. What the system produces is better described as orthographically
+noisy Spanish: accent dropping, lowercasing, punctuation repetitions 
+and vowel elongation are present, but the lexically distinctive 
+markers of the register are not.
+\paragraph{Code-mixing:}English lexical items pass through untranslated, especially slang and abbreviations the encoder cannot resolve (examples 1, 2, 3). Their positioning is though more grammatically correct than the baseline.
+\paragraph{English passthrough:}English interjections and discourse markers are
+copied verbatim rather than replaced with Spanish equivalents (example 4).
+
+
+The last two failures observed share a common root: the encoder cannot process the main exponents of informal English before the decoder translates the input. In decoder-only mode, that is predictable: the encoder is frozen and has never seen \texttt{eng\_noisy\_Latn}; in combined mode, however, the encoder \emph{is} trained to denoise, but the same observed issues persist, confirming that monolingual encoder training does not transfer through the translation pathway. This also partially explains
+the absence of Spanish abbreviations: if the encoder cannot resolve English abbreviations semantically, the decoder never receives the input that would allow it to produce equivalent abbreviations in the target language. Yet the ablation shows that each component works well in isolation: the encoder effectively denoises informal English (Table~\ref{tab:denoise_results}), and the decoder produces informal Spanish from clean input (Table~\ref{tab:noisify_results}). This motivates one last experiment: a cascade-architecture that decomposes the task into individually learnable steps, allowing each component to operate in the condition that it excells on rather than relying on implicit cross-lingual composition.
+
+\begin{table*}[t]
+  \centering
+  \small
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{p{0.6cm}p{4.2cm}p{3.5cm}p{3.8cm}p{3.8cm}}
+    \toprule
+    \textbf{\#} & \textbf{Input (noisy EN)} & \textbf{Reference (noisy ES)} &
+      \textbf{Baseline (NLLB)} & \textbf{Dec-only (designed)} \\
+    \midrule
+    1 & cant believeee they lost again smh & no puedooo creer q perdieron otra vez &
+      No puedo creer que hayan perdido otra vez. &
+      no puedo creeree que perdieron otra vez smh \\
+    \addlinespace
+    2 & keeper saved an insaaane pen & el portero paro un penalti tremeeendo &
+      El guardi\'an salv\'o una pluma de la casa. &
+      keeper salv\'o unaa pensaaane \\
+    \addlinespace
+    3 & hes been playing rly well this season tbh & sta jugando mazo bn esta temporada &
+      Ha estado jugando bien el rly esta temporada. &
+      ha estado jugando rly bien esta temporada tbh \\
+    \addlinespace
+    4 & haha oh okk ! yeaah , they've been dating for a while now !! &
+      haha ah okk ! siii , hace tiempo ya q salen !! &
+      Ya han estado saliendo por un tiempo ahora !! &
+      haha oh okk ! yeaah, han estado saliendo desde hace un tiempo !! \\
+    \bottomrule
+  \end{tabular}
+  \caption{Selected outputs illustrating system behaviour (designed inference:
+    \texttt{eng\_Latn}$\rightarrow$\texttt{spa\_noisy\_Latn}).
+    Example~1: elongation and lowercasing appear but English interjection (\textit{smh}) is not replaced with a Spanish equivalent.
+    Example~2: baseline catastrophically mistranslates football slang (\textit{pen}$\rightarrow$\textit{pluma}); the adapted model also fails.
+    Example~3: English slang (\textit{rly}, \textit{tbh}) passes through untranslated in both systems.
+    Example~4: English interjections are copied verbatim; output contains exact English fragments.}
+  \label{tab:qualitative}
+\end{table*}
+
+
+%% ─── CASCADE ──────────────────────────────────────────────────────────────────
+\subsection{Cascade Pipeline}
+\label{sec:cascade}
+
+The cascade proceeds in three stages:
+(1)~denoise informal EN$\rightarrow$clean EN (encoder-only LoRA),
+(2)~translate clean EN$\rightarrow$clean ES (base NLLB, no LoRA),
+(3)~noisify clean ES$\rightarrow$informal ES (decoder-only LoRA noisifier).
+We rely on automatic metrics to select the best models for steps~1 and~3 (encoder-only
+\texttt{random\_same\_mag} and decoder-only \texttt{direction\_init},
+respectively).
+
+We acknowledge two inherent drawbacks of this pipeline.
+First, errors propagate: each step's imperfections compound,
+and a mistranslation or misinterpretation at any stage cannot
+be corrected downstream. Second, some information is inevitably 
+lost: pragmatic markers from the noisy English input text
+(\textit{lol}, \textit{ngl}, \textit{tbh}) that have
+no clean-text equivalent are erased during the encoder's denoising step
+and cannot be recovered at the noisification stage with the fine-tuned decoder only.
+A full analysis of error propagation through the cascade ---including the conditions under which denoising errors compound versus cancel, and strategies for routing pragmatic markers rather than erasing them--- is left to future work
+
+
+The qualitative review confirms this trade-off:
+the cascade produces more complete translations, resolving
+English tokens that the frozen encoder in decoder-only mode
+cannot handle (\textit{rly}$\rightarrow$\textit{muy bien},
+\textit{wk}$\rightarrow$\textit{semana}), but at the cost of
+informal surface forms: outputs are frequently cleaner than
+decoder-only, with fewer elongations. The example below constitutes a rare case where the cascade partially achieves both. Not only does it output a full translation, but also produces a spontaneous elongation that mirrors the informal use of \textit{u} in the English noisy source text, an element that was left untranslated in the decoder-only output, resulting in an agrammatical sentence. Table~\ref{tab:cascade} reports automatic metrics for reference. 
+
+\begin{quote}
+\small
+\textbf{Input}: \textit{im starting to blieve that im way to much for u} \\
+$\rightarrow$ \textit{I'm starting to believe that I'm way to much for you.} \\
+$\rightarrow$ \textit{Estoy empezando a creer que soy demasiado para ti.} \\
+$\rightarrow$ \textbf{estoy empezando a creer que soy demasiado para tiiii} \\
+\textbf{Ref}: \textit{toy mpezando a pensar q soy demasiado pa ti}
+\end{quote}
+
+\noindent
+
+
+See Appendix~\ref{sec:appendix_full} for the full comparison sentence by sentence.
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{lrrr}
+    \toprule
+    & \textbf{BLEU} & \textbf{chrF} & \textbf{COMET} \\
+    \midrule
+      Baseline (no LoRA)        & 15.35 & 40.77 & 0.697 \\
+      Dec-only (designed)   & \textbf{21.49} & 44.55 & \textbf{0.733} \\
+      Cascade             & 18.35 & \textbf{45.31} & 0.721 \\
+    \bottomrule
+  \end{tabular}
+  \caption{End-to-end informal EN$\rightarrow$informal ES, scored against
+    handwritten noisy ES references. The cascade approaches decoder-only
+    performance while producing more of the original informal features.}
+  \label{tab:cascade}
+\end{table}
+
+Despite the cascade's improvements reported, output sentences still lack one of the main characteristic of informal text: Spanish abbreviations remain absent from both systems, signaling that the decoder still fails at mapping words to their abbreviated equivalents. Inspection of the cascade's intermediate outputs and the standalone
+noisification results confirms that this is a noisifier-side limitation and
+not a cascade-specific issue: given clean inputs containing, for example,
+\textit{por qu\'e}, \textit{que}, and \textit{ma\~{n}ana}, the noisifier
+drops accents and lowercases but never produces \textit{xq}, \textit{q},
+or \textit{m{\~n}na}, even in isolation. This likely reflects a difficulty gradient: character-level transforms such as accent dropping and lowercasing generalize from relatively few examples because the mapping is local and consistent. Word-level substitutions like abbreviations require learning a lexical lookup table —--a sparse, item-specific mapping--— that only generalizes if training data contains sufficient coverage of each substitution pair. At 10k pairs with abbreviations distributed across many word types, most individual mappings are seen too rarely to be reliably acquired.
+
+%% ─── LIMITATIONS ──────────────────────────────────────────────────────────────
+\section*{Limitations}
+
+Our evaluation set of 45 handwritten pairs is small for corpus-level metrics;
+BLEU, chrF and COMET at this scale are sensitive to individual failures, and
+differences should be treated as indicative rather than conclusive. The
+geometric analysis uses the same 45 pairs; a larger, more diverse set would
+allow per-noise-type analysis of direction consistency.
+
+The most consequential limitation of the current system is its failure to
+produce Spanish abbreviations. Accent dropping, lowercasing, and vowel
+elongation are character-level transforms that generalise from the training data;
+abbreviations require learning word-level substitution rules that are underrepresented in the current training distribution and may require either substantially more abbreviation-heavy data or a different learning mechanism. Until this gap is closed, the system is better characterised as producing orthographically degraded formal Spanish than fully noisy, social-media-like Spanish.
+
+The synthetic training data applies rule-based transforms that may not capture
+the full distributional complexity of real social media text, particularly
+domain-specific slang and cross-linguistic code-switching. Both decoder-only and
+combined modes produce pathologically long vowel repetitions
+(hundreds of the same character), a decoding artifact triggered by encoder
+uncertainty that we did not address with repetition penalties or
+post-processing techniques. All experiments use the distilled 600M parameter variant of
+NLLB; larger models may support richer new-token representations. All experiments target a single language pair
+(EN$\rightarrow$ES), and the noisification rules were designed
+specifically for English and Spanish; both the findings and the
+methodology may not generalise to pairs with structurally
+different informality or languages requiring different
+orthographic transforms. We use LoRA (rank 16) throughout; full fine-tuning or higher-rank adapters might learn more complex transforms such as abbreviations, and the observed cross-lingual composition gap may partly reflect adapter
+capacity rather than a fundamental architectural limitation.
+
+%% ─── CONCLUSION ───────────────────────────────────────────────────────────────
+\section*{Conclusion}
+
+We propose a mechanism for adapting NLLB-200 to produce informal
+Spanish from monolingual data alone, and provide a systematic
+evaluation of its components. To support this and future work,
+we release a 10K monolingual clean$\leftrightarrow$noisy dataset
+for English and Spanish, constructed from real social media
+normalisation pairs and synthetic rule-based transforms.
+Evaluation relies on 45 professionally manufactured
+clean$\leftrightarrow$noisy parallel pairs and a human review
+of informal markers across the most competitive systems,
+selected on the basis of automatic metrics.
+
+Complementing the fine-tuning study, a geometric analysis
+across three multilingual encoders finds that the
+clean$\leftrightarrow$noisy direction in embedding space is
+statistically significant but practically inconsistent
+(per-pair $\cos \approx 0.56$), providing no advantage as an
+initialisation prior, a null result confirmed independently
+by the fine-tuning ablation.
+
+A key finding is that informal translation decomposes into
+separable sub-problems: denoising, translation, and
+noisification can each be learned independently from
+monolingual data alone. Decoder-only LoRA fine-tuning identifies the decoder as the
+key component for informal production: a frozen, unmodified
+encoder is sufficient for the translation pathway, though it
+remains a bottleneck for source-side informal tokens. However, 
+encoder-side adaptation and joint training do not
+improve end-to-end performance, revealing a cross-lingual
+composition gap. Each component works well in isolation, but
+they do not compose through the shared translation pathway,
+likely due to representational incompatibility rather than a
+fundamental data limitation.
+
+A cascade pipeline making this decomposition explicit---
+denoising informal English, translating to clean Spanish, then
+noisifying---resolves English slang that the single-model
+system leaves untranslated and produces informal Spanish
+features in fully translated output, a combination no
+single-model system achieves. The remaining bottlenecks are
+well-localised: producing target-side abbreviations and
+preserving source-side pragmatic markers represent the key gap
+between current output and genuine informal Spanish.
+
+Several directions follow naturally from these findings.
+On the data side, the most immediate remedies are scaling
+training data beyond the current 10k pairs, enriching the
+distribution with abbreviation-heavy examples, and developing
+techniques to detect and route pragmatic markers through the
+pipeline rather than erasing them. On the modelling side, larger
+NLLB variants and higher-rank adapters may support richer
+register representations and close the composition gap that
+rank-16 LoRA leaves open. Extending the approach to other
+language pairs---particularly those with structurally
+different informality---would test how far the decomposition insight
+generalises. Finally, benchmarking against a large language
+model baseline would situate this work in a broader context:
+the central question is whether efficient adaptation of a
+small, specialised model can match or complement what a much
+larger model produces without any fine-tuning at all.
+
+%% ─── BIBLIOGRAPHY ─────────────────────────────────────────────────────────────
+\bibliography{custom}
+
+\clearpage
+%% ─── APPENDIX ─────────────────────────────────────────────────────────────────
+\onecolumn
+\appendix
+
+\section{Full Output Comparison}
+\label{sec:appendix_full}
+
+Table~\ref{tab:full_comparison} presents the complete output of the best
+single-model system (decoder-only \texttt{random\_uninformed}, designed
+inference) and the cascade pipeline for all 45 evaluation pairs, alongside the
+informal English source and the handwritten informal Spanish reference. \emph{Source}: informal English input.
+
+{\small
+\begin{longtable}{c p{3.3cm} p{3.3cm} p{3.3cm} p{3.3cm}}
+  \label{tab:full_comparison} \\
+  \toprule
+  \textbf{\#} & \textbf{Source (noisy EN)} & \textbf{Reference (noisy ES)} &
+    \textbf{Dec-only (designed)} & \textbf{Cascade} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{\#} & \textbf{Source (noisy EN)} & \textbf{Reference (noisy ES)} &
+    \textbf{Dec-only (designed)} & \textbf{Cascade} \\
+  \midrule
+  \endhead
+  \midrule
+  \multicolumn{5}{r}{\textit{Continued on next page}} \\
+  \endfoot
+  \bottomrule
+  \endlastfoot
+
+  1 & u coming to the match tmrw?? & vienes al partido mñna?? & u viene al partido tmrw?? & vienes al partido mañana? \\
+  \addlinespace
+  2 & cant believeee they lost again smh & no puedooo creer q perdieron otra vez & no puedo creeree que perdieron otra vez smh & no puedo creer que hayan perdido de nuevo \\
+  \addlinespace
+  3 & ref was soooo bad in the 2nd half omg & el arbitro estuvo pesimo en el 2do tiempo & el árbitro fue sooooo malo en la segunda mitad omg & el ref estuvo tan malo en la segunda mitad \\
+  \addlinespace
+  4 & did u see that goal last nite?? & viste ese gol anoche?? & viste ese gol la última noche?? & vi ese gol anoche? \\
+  \addlinespace
+  5 & hes been playing rly well this season tbh & sta jugando mazo bn esta temporada & ha estado jugando rly bien esta temporada tbh & ha estado jugando muy bien esta temporada \\
+  \addlinespace
+  6 & dont get why they sold him ffs & no entiendo xq lo vendieron & no entiendo por que le vendieron ffs & no entiendo por que le vendieron ffs \\
+  \addlinespace
+  7 & keeper saved an insaaane pen & el portero paro un penalti tremeeendo & keeper salvó unaa pensaaane & Keeper salvó un bolígrafo interior \\
+  \addlinespace
+  8 & u gonna watch the final or nah?? & vas a ver la final o q?? & vas a ver la final o no?? & vas a ver el final o no? \\
+  \addlinespace
+  9 & pls tell me the score i couldnt watch & dime el resultado no pude ver & pls dime la partitura que no pude ver & por favor, dime la partitura que no pude ver \\
+  \addlinespace
+  10 & theyre gonna win the league this yr & van a ganar la liga este año seguro & van a ganar la liga este año & van a ganar la liga estee año \\
+  \addlinespace
+  11 & that was the best match ive ever seen ngl & fue el mejor partido q vi en mi vida mal & ese fue el mejor partido que he visto ngl & fue el mejor partido que he visto \\
+  \addlinespace
+  12 & he scored from outside the box it was insaneeee & metio un gol desde fuera del area malll & él anotó desde afuera de la caja era locoeee & él anotó desde afuera de laa caja que era una locura \\
+  \addlinespace
+  13 & we neeed to buy a new striker in jan & necesitamos comprar un 9 en enero ya & necesitamos comprar un nuevo atacante en jan & Necesitamos comprar un nuevo atacante en enero \\
+  \addlinespace
+  14 & wanna go to the stadium w me?? & quieres venir al campo conmigo?? & quieres ir al estadio con mi?? & quieres ir al estadio conmigo? \\
+  \addlinespace
+  15 & im so tired of losing every wk man & estoy cansado de perder todas las semanas joder & estoy tan cansado de perder cada wwk hombre & estoy cansado de perder cada semana hombre \\
+  \addlinespace
+  16 & atmosphere was absolutelyyyy amazing & el ambiente estuvo increibleee & la atmósfera era absolutamenteyyy increíble & laa atmósfera era absolutamente increíble \\
+  \addlinespace
+  17 & i think were gonna get relegated lol & creo q nos vamos al descenso jaja & creo que iban a ser relegados lol lol & creo que iban a ser relegados \\
+  \addlinespace
+  18 & they announced the new coach this morn & anunciaron al nuevo mister por la mñna & anunciaron el nuevo entrenador esta mañana & esta mañana anunciaron rl nuevo entrenador \\
+  \addlinespace
+  19 & training got cancelled cuz of the weather lol & se suspendio el entreno x el clima jaj & el entrenamiento fue cancelado por causa del tiempo lol & el entrenamiento fue cancelado por causa del clima \\
+  \addlinespace
+  20 & where r u watching the game 2nite?? & dnd vas a ver el partido esta noche?? & donde r u viendo el juego 2nite?? & donde ves el partido hoy? \\
+  \addlinespace
+  21 & yeh but still that's wild lol & seee pero igual es super loco lol & si pero aun eso es salvaje lol & si, pero aun asi es salvaje \\
+  \addlinespace
+  22 & haha oh okk ! yeaah , they've been dating for a while now !! they seem crazy cute !!! & haha ah okk ! siii , hace tiempo ya q salen !! son monisimos !!! & haha oh okk ! yeaah, han estado saliendo por un tiempo ahora !! parecen loco lindo !!! & si, han estado saliendo desde hace tiempo ahora!! parecen locos y lindos !!! \\
+  \addlinespace
+  23 & best snapchat i've seen all dayyyyyy lmfao & mejor snapchat q vi en todo el diaaaaaaa lmfao & mejor snapchat que he visto todo el diaaaaaaaaa & el mejor snapchat que he visto todo el dia \\
+  \addlinespace
+  24 & lol . don't act cute here pls & lol . no te hagas el mono aqui porfa & lol. no te hagas lindo aqui pls & lol. no actúes tan lindo aqui por favor \\
+  \addlinespace
+  25 & idek why i bother ... smh & ni se xq me molesto ... ayayayya & idek por que me molesto ... smh & idek why i bother ... \\
+  \addlinespace
+  26 & umm i thouuuuught thaaaaat convo was pretty funny soooooo & umm me parecioooooooo q esaaaaaa charla era bastante graciosa asiqqqqqqq & umm yo thouuuuuuuu pensé queaaaat convo fue bastante gracioso soooooooo & pensé que ese convo era bastante divertido \\
+  \addlinespace
+  27 & stop be so fucken gay you three aint nobody got time for that & dejad de ser tan pto gays los tres no lo sois no tenemos tiempo pa esto & deja de ser tan jodido gay ustedes tres aint nadie tiene tiempo para eso & dejen de ser tan jodidamente gays que los tres no tienen tiempo para eso \\
+  \addlinespace
+  28 & im starting to blieve that im way to much for u & toy mpezando a pensar q soy demasiado pa ti & estoy empezando a creer eso im camino demasiado para u & estoy empezando a creer que soy demasiado para tiiii \\
+  \addlinespace
+  29 & idk . but i know for damn sure i ain driving her nowhere lmao & nse . pero si q se q no la llevo a ningun sitio njasjajabncj & idk . peroo sé con maldita certeza que la nooo conduzco a ningun lado lmao & peroo sé con certeza que no la estoy llevando a ninguna parte \\
+  \addlinespace
+  30 & oh you finished msges lol hw much you chat ha ! :p & ah has terminao los msjes lol mae mia cuanto chateas ha ! :p & oh has terminado msges lol hw mucho te charlas ha ! :p & oh, terminaste los mensajes lol hw much you chat ha !:p \\
+  \addlinespace
+  31 & i'm bored outta my mind and i'm not sopposed to be on here lol & stoy mega aburrida y no debería star aki lol & estoy aburrido de mi mente y no estoy sopostado para estar aquí lol & soy aburrido y estoy loco y no debería estar aqui \\
+  \addlinespace
+  32 & with your beleive , u must receive , soo don't be deceived , with god , all things are possible . \#hapibufdedamooz!? & con tu fe , debs recivir , asiqqq no te dejes engañar, con dios, todo es posible. \#hapibufdedamooz!? & con tu creieve, u debe recibir, soo no te engañes, con dios, todo es posible . \#hapibufdedamooz!? & con tu creencia, debes recibir, asi que no te dejes engañar, con dios, todo es posible. \#hapibubufdedamooz!? \\
+  \addlinespace
+  33 & resellers probably , haha tryin to squash the competition and get more pairs . & seguro revenderores , jjaj tratand de aplastar a la competencia y quedarse con más . & resellers probablemente , haha tratando de aplastar la competencia y conseguir mas pares . & los revendedores probablemente , haha tratando de aplastar a la competencia y conseguir mas pares . \\
+  \addlinespace
+  34 & after the exam when everyones discussiiiiing answers \& u wrote nothing similar & después del examen cuando todos se diceeeeeen las respuestas y no escrbiste nada parecido & después del examen cuando todos discutiiiiing respuestas \& u escribió nada similar & después del examen, cuando todo el mundo estaba discutiendo respuestas y no escribiste nada similar \\
+  \addlinespace
+  35 & i know . im thinking im finna walk back outside and shit & lo se . stoy pensando q toy bn para caminar otra vz afuera y kk & lo se . estoy pensando en finnna caminar de vuelta afuera y mierda & lo se. estoy pensando en volver a caminar afuera y hacer mierda \\
+  \addlinespace
+  36 & is it just me or it's really fucking hot !? merde alors !!!! & soy yo o hace un puto calor !? mierda !!!! & es solo yo o es realmente jodidamente caliente !? merde alors !!!! & solo soy yo o es muy caliente? \\
+  \addlinespace
+  37 & the fucking video of zayn and louis smoking im layghing my ass off haha & el pñtero video de zayn y louis fumndo me meo de risa haha & el puto video de zayn y louis fumando me pongo el culo de laaa haha & el video de zayn y louis fumando me estoy tirando el culo haha \\
+  \addlinespace
+  38 & hey gma , broadcasting the zouis video won't make you a better network k bye -zel & ey gma , pasar el video de zouis no t hace un mejor canal ok bye -zel & oye gma , transmitiendo el video zouis no te hará una mejor red k bye-zel & gma , transmitir el video zouis no te hará una mejor red k bye-zel \\
+  \addlinespace
+  39 & kim kardashian \& kanye weeest r husband and wife ! & kim kardashian \& kanye weeest se casaronnnn ! & kim kardashian \& kanye weeest r marido y esposa ! & kim kardashian y kanye west son marido y mujer \\
+  \addlinespace
+  40 & lmfao do u remember when harry got grounded for saying ' pussy ' on live national tv & lmfao t acuerdas cuando a harry lo castigaron x decir ' coño ' en vivo en la tele & Immao te acuerdas cuando Harry fue castigado por decir ' puta ' en vivo en la tv nacional & recuerdas cuando harry fue condenado por decir 'pussy' en vivo en la tv nacional? \\
+  \addlinespace
+  41 & i'll try and use it in the news tomorrow ! haha x & voy a tratar de usarlo en las notiicas mñn ! haha x & intentaré usarlo en la noticia mañana ! haha x & intentaré usarlo en la noticia mañana ! haha xii \\
+  \addlinespace
+  42 & another gain tweet iiiiin 5 mins get stalking or u missit & otro tuit ganado eeeeeen 5 mins ponte a stalkear o te lo pierdssss & otro ganancia tweet iiiiii en 5 minutos consigue acosando o u missit & otro tweet de ganancia en 5 minutos recibe acoso o te pierdes \\
+  \addlinespace
+  43 & im feelin like malcom in the middleee loool & me 100to cmo malcolm el d en medio loool & me siento comoo malcom en el medioee loool & me siento como malcolm en medio \\
+  \addlinespace
+  44 & btfol lmfaoo now dat was aaaa good laugh & me meo de risaaaaa lmfaoo qué buen chisteeeee & btfol lmfaoo ahora que era unaaaa buena risa & btfol lmfao ahora que fue una buena risa \\
+  \addlinespace
+  45 & my mom just asked if boys at my school shave their armpits ... umm wuuuut ????!?!? & mi mama m acaba de preguntar si los chikos de mi scuela se rasuran el sobaco ... perrrdona ????!?!? & mi madre acaba de preguntar si los chicos de mi escuela afeitan sus axilas ... umm wuuuut ????!?!? & mi madre acabo de preguntarle si los chicos de mi escuela se afeitan las axilas ... umm whoout ????!?!? \\
+  \addlinespace
+
+\end{longtable}
+}
+
+
+
+\end{document}
